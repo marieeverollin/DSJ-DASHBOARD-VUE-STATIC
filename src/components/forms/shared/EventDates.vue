@@ -1,0 +1,115 @@
+<template>
+    <div id="event-dates-block" class="event-dates border border-dsj-grey2 rounded-xl">
+        <div class="dates-header flex items-center justify-between bg-dsj-yellow-15 p-5 rounded-t-xl">
+            <h3 class="text-lg text-dsj-grey3">Event Dates</h3>
+            <h4 class="text-sm text-dsj-grey3">{{ dates.length }} date{{ dates.length > 1 ? 's' : '' }}</h4>
+        </div>
+
+        <div class="flex flex-col gap-y-5 p-5">
+            <div v-for="(date, index) in dates" :key="index" class="flex items-center gap-x-5">
+                <div class="input-group flex items-center gap-x-5 w-4/12">
+                    <label for="date" class="text-dsj-grey4 flex"> Event Date </label>
+                    <DatePicker v-model="date.icondisplay" showIcon fluid iconDisplay="input" placeholder="Select"
+                        class="flex-1 rounded-md text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none" />
+                </div>
+
+                <div class="input-group flex items-center gap-x-5 w-3/12">
+                    <label for="start-time" class="text-dsj-grey4 flex"> Start Time </label>
+                    <DatePicker id="datepicker-timeonly" v-model="date.startTime" timeOnly fluid placeholder="Select"
+                        class="flex-2 rounded-md text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none" />
+                </div>
+
+                <div class="input-group flex items-center gap-x-5 w-3/12">
+                    <label for="end-time" class="text-dsj-grey4 flex"> End Time </label>
+                    <DatePicker id="datepicker-timeonly" v-model="date.endTime" timeOnly fluid placeholder="Select"
+                        class="flex-2 rounded-md text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none" />
+                </div>
+
+                <div class="w-2/12 flex justify-end">
+                    <Button v-if="index === 0" label="Add Date" icon="pi pi-plus" @click="addDate" severity="secondary"
+                        class="add-date items-center justify-center gap-x-2 bg-dsj-yellow text-white px-2.5 py-1.5 rounded-md text-xs uppercase h-fit" />
+                    <Button v-else label="Delete" icon="pi pi-times" @click="removeDate(index)" severity="danger"
+                        class="delete-date items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5 rounded-md text-xs uppercase h-fit" />
+                </div>
+            </div>
+
+            <Divider class="border border-dsj-grey1" />
+
+            <div class="flex gap-x-4">
+                <div class="input-group flex items-center gap-x-5 w-3/12">
+                    <label for="repeatingEvent" class="text-dsj-grey4 w-7/12"> Repeating Event </label>
+                    <Checkbox v-model="repeatingEvent" inputId="repeatingEvent" name="repeatingEvent"
+                        value="repeatingEvent" class="w-5/12" />
+                </div>
+
+                <div v-if="repeatingEvent" class="input-group flex items-center gap-x-5 w-5/12">
+                    <label for="repeatingFrequency" class="text-dsj-grey4 w-7/12"> Repeat Frequency </label>
+                    <Select :key="repeatingEvent" v-model="repeatingFrequency" :options="repeatingFrequencyOptions"
+                        optionLabel="name" placeholder="Select"
+                        class="w-full rounded-md text-dsj-grey3 border border-dsj-grey2 shadow-none" />
+                </div>
+            </div>
+
+            <div class="flex gap-x-4">
+                <div class="input-group flex items-center gap-x-5 w-3/12">
+                    <label for="repeatOneYear" class="text-dsj-grey4 w-7/12"> Repeat for one year </label>
+                    <Checkbox v-model="repeatOneYear" inputId="repeatOneYear" name="repeatOneYear" value="repeatOneYear"
+                        class="w-5/12" />
+                </div>
+
+                <div v-if="!repeatOneYear" class="input-group flex items-center gap-x-5 w-5/12">
+                    <label for="endingOn" class="text-dsj-grey4 w-7/12"> Ending on </label>
+                    <DatePicker v-model="endingOn" placeholder="Select Date"
+                        class="w-full rounded-md text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none" />
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            dates: [
+                {
+                    icondisplay: null,
+                    startTime: null,
+                    endTime: null,
+                },
+            ],
+            repeatingEvent: false,
+            repeatOneYear: false,
+            repeatingFrequency: null,
+            endingOn: null,
+            repeatingFrequencyOptions: [
+                { name: 'Daily', value: 'daily' },
+                { name: 'Weekly', value: 'weekly' },
+                { name: 'Monthly', value: 'monthly' },
+            ],
+            endingOnOptions: [
+                { name: 'Specific Date', value: 'specific-date' },
+                { name: 'After X Occurrences', value: 'after-x' },
+            ],
+        };
+    },
+    methods: {
+        addDate() {
+            this.dates.push({
+                icondisplay: null,
+                startTime: null,
+                endTime: null,
+            });
+        },
+        removeDate(index) {
+            if (this.dates.length > 1) {
+                this.dates.splice(index, 1);
+            }
+        },
+    },
+};
+</script>
+
+<style scoped></style>

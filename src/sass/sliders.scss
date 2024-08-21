@@ -1,0 +1,54 @@
+.hero-slider .slick-track {
+    @apply flex;
+}
+
+.bestsellers-slider,
+.popular-farms-slider {
+    .slick-arrow {
+        @apply relative z-50;
+        &.slick-prev {
+            @apply absolute -left-5 top-1/4 w-12 h-12 shadow rounded-full text-transparent bg-no-repeat bg-center bg-white;
+            background-image: url('../../../images/icons/chevron-left-slider.svg')
+        }
+        &.slick-next {
+            @apply absolute -right-5  top-1/4 w-12 h-12 shadow rounded-full text-transparent bg-no-repeat bg-center bg-white;
+            background-image: url('../../../images/icons/chevron-right-slider.svg')
+        }
+    }
+    .slick-list{
+        @apply overflow-hidden;
+        .slick-track {
+            @apply flex gap-4;
+            .slick-slide {
+                @apply w-1/5;
+            }
+        }
+    }
+}
+
+@media(max-width: 1024px){
+    .bestsellers-slider,
+    .popular-farms-slider {
+        .slick-arrow {
+            &.slick-prev {
+                @apply top-[83px];
+            }
+            &.slick-next {
+                @apply top-[83px];
+            }
+        }
+    }
+}
+@media(max-width: 900px) {
+    .bestsellers-slider,
+    .popular-farms-slider {
+        .slick-arrow {
+            &.slick-prev {
+                @apply top-[179px];
+            }
+            &.slick-next {
+                @apply top-[179px];
+            }
+        }
+    }
+}

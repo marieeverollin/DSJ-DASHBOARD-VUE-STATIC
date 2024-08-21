@@ -1,0 +1,118 @@
+html {
+    @apply overflow-x-hidden;
+}
+
+body{
+    @apply overflow-x-hidden;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+section {
+    @apply my-4 lg:my-10
+}
+
+input:focus{
+    outline: none;
+}
+
+// BREADCRUMBS
+  .breadcrumbs {
+    @apply py-3;
+    .crumbs {
+      li {
+        background-image: url('../images/icons/chevron-right-slider.svg');
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: 15px;
+        @apply pr-8 mr-4 text-sm font-semibold;
+        &:last-child {
+        @apply font-normal;
+          background-image: none;
+        }
+      }
+    }
+    }
+
+
+// FONTS
+h1 {
+    @apply text-3xl md:text-4xl xl:text-6xl;
+}
+
+h2 {
+    @apply text-2xl md:text-3xl xl:text-5xl;
+}
+
+h3 {
+    @apply text-xl md:text-3xl;
+}
+
+h4 {
+    @apply text-lg md:text-xl;
+}
+
+h5 {
+    @apply text-lg md:text-xl;
+}
+
+
+// BTNS
+.btn {
+    @apply px-6 py-3 md:py-4 rounded-full md:text-xl font-semibold w-fit transition-all;
+}
+
+.link {
+    @apply text-[#4C73FF] text-lg cursor-pointer w-fit transition-all;
+
+    &:hover {
+        @apply text-blue-400;
+    }
+}
+
+.pen-blue {
+    padding-left: 25px !important;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 20px;
+    background-image: url('../images/icons/pen-blue.svg');
+}
+
+
+// ICONS
+.favorite-icon-product {
+    @apply cursor-pointer;
+    &.checked {
+        animation: heartbeat 1.3s ease-in-out;
+        path {
+            fill: red;
+            stroke: red;
+        }
+    }
+}
+
+// ANIMATION 
+@keyframes heartbeat {
+	0% {
+		animation-timing-function: linear;
+		transform: scale(1);
+		transform-origin: center center;
+	}
+
+	20% {
+		animation-timing-function: ease-in;
+		transform: scale(0.85);
+	}
+
+	33% {
+		animation-timing-function: ease-out;
+		transform: scale(1.2);
+	}
+
+
+	45% {
+		animation-timing-function: linear;
+		transform: scale(1);
+	}
+}

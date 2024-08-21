@@ -1,0 +1,222 @@
+/* Components PrimeVue */
+.p-fileupload {
+    display: flex;
+    justify-content: flex-start;
+    color: #A0A0A0;
+
+    span {
+        font-size: 14px;
+        color: #545454;
+    }
+
+    .p-button {
+        svg {
+            width: 12px;
+        }
+
+        span {
+            color: #fff;
+        }
+
+        .p-button-label {
+            font-weight: 300;
+        }
+    }
+}
+
+.p-button.add-date,
+.p-button.delete-date {
+    .p-button-icon::before {
+        font-size: 10px;
+        display: block;
+    }
+
+    .p-button-label {
+        font-weight: 300;
+    }
+}
+
+.p-button {
+    .p-button-icon::before {
+        font-size: 10px;
+        display: block;
+    }
+
+    .p-button-label {
+        font-weight: 300;
+    }
+}
+
+.p-checkbox {
+    .p-checkbox-box {
+        background-color: #fff;
+        border: 1px solid #E3E3E3;
+        box-shadow: none;
+    }
+}
+
+.p-checkbox.p-checkbox-checked {
+    svg {
+        color: #16a34a;
+    }
+}
+
+.p-textarea {
+    color: #545454;
+}
+
+.p-inputtext {
+    color: #545454;
+    box-shadow: none;
+}
+
+.p-paginator-current {
+    color: #A0A0A0;
+}
+
+.p-paginator-first,
+.p-paginator-prev,
+.p-paginator-next,
+.p-paginator-last {
+    color: #FEC100;
+}
+
+.p-paginator-first.p-disabled,
+.p-paginator-prev.p-disabled,
+.p-paginator-next.p-disabled,
+.p-paginator-last.p-disabled {
+    color: #E3E3E3;
+}
+
+.p-datepicker input::placeholder {
+    color: #545454;
+    box-shadow: none;
+}
+
+.p-datepicker-timeonly input::placeholder {
+    color: #545454;
+    box-shadow: none;
+}
+
+/* ----------------------------------------- */
+
+.sidebar {
+    border-right: 1px solid #E3E3E3;
+
+    .btn-add-event {
+        .pi-plus {
+            font-size: 10px;
+        }
+    }
+}
+
+.filterbar {
+    .date-picker {
+        padding-left: 7px;
+
+        .p-inputtext {
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        .p-datepicker-input-icon-container {
+            top: auto;
+            right: auto;
+            margin-top: 0px;
+            color: #FEC100;
+            align-self: center;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .az-filter {
+        padding-left: 7px;
+
+        input {
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        input::placeholder {
+            color: #FEC100;
+        }
+    }
+
+    .mobile-filters {
+        padding-left: 7px;
+
+        input {
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        input::placeholder {
+            color: #FEC100;
+        }
+    }
+
+    .search-bar {
+        input {
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        input::placeholder {
+            color: #FEC100;
+        }
+    }
+}
+
+.single-event {
+    flex: 1;
+    max-width: 32%;
+    aspect-ratio: 1/1;
+
+    .event-buttons {
+        .p-button .p-button-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .p-button .p-button-icon::before {
+            font-size: 10px;
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 1366px) {
+    .single-event {
+        max-width: 31.2%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .single-event {
+        max-width: 50%;
+        flex: 1 0 48%;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .single-event {
+        max-width: 47%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .single-event {
+        max-width: 100%;
+        aspect-ratio: auto;
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dashboard-container .sidebar {
+        border-right: 0px;
+    }
+}
