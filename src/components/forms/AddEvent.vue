@@ -65,8 +65,6 @@
 </template>
 
 <script>
-import CustomContent from './shared/CustomContent.vue';
-
 export default {
     data() {
         return {
