@@ -2,19 +2,17 @@
     <div class="dashboard-container w-full relative flex flex-col md:flex-row bg-white rounded-2xl shadow-sm">
 
         <!-- Sidebar -->
-        <Sidebar :filters="eventFilters" :selectedFilter="selectedFilter" 
-            @update:filter="selectFilter" />
-
+        <Sidebar :filters="eventFilters" :selectedFilter="selectedFilter" @update:filter="selectFilter" />
 
         <!-- Main Content -->
         <div class="main-content flex flex-col md:w-full gap-y-5 p-4 lg:p-12">
-            <div class="filter-row flex md:flex-col-reverse xl:flex-row w-full justify-between gap-4">
+            <div class="filter-row flex md:flex-col lg:flex-row w-full items-center md:items-start justify-between gap-4">
 
                 <h2 class="filterSelected text-xl uppercase text-dsj-yellow font-normal">{{ selectedFilter }}</h2>
                 <Button label="Add Event" icon="pi pi-plus"
                     class="btn-add-event md:hidden bg-dsj-yellow text-white py-2.5 px-3 rounded-lg text-sm w-fit" />
 
-                <div class="hidden filterbar md:flex justify-end gap-2 flex-wrap">
+                <div class="hidden filterbar md:flex md:justify-end gap-2">
                     <DatePicker v-model="filterDate" showIcon fluid iconDisplay="input" placeholder=" "
                         class="date-picker flex items-center gap-x-2 border border-dsj-grey2 p-2 aspect-square max-h-10 rounded-lg text-dsj-yellow text-sm shadow-none cursor-pointer" />
                     <IconField

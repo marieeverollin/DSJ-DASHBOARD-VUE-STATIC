@@ -5,29 +5,21 @@
 
                 <div class="sidebar-header flex gap-4 flex-col-reverse justify-between gap-x-4w w-full">
 
-                    <div
-                        class="md:hidden filterbar flex flex-col-reverse items-center sm:flex-row justify-between md:justify-end gap-2 w-full md:w-auto">
+                    <div class="md:hidden filterbar flex md:flex-row flex-col-reverse items-center justify-center md:justify-between gap-2 flex-wrap">
                         <div class="flex gap-2">
-                            <DatePicker :model-value="icondisplay" @update:model-value="updateIconDisplay" showIcon
-                                fluid iconDisplay="input"
-                                class="date-picker max-w-8 border border-dsj-grey2 rounded-lg px-2" />
+                            <DatePicker v-model="filterDate" showIcon fluid iconDisplay="input" placeholder=" "
+                                class="date-picker flex items-center gap-x-2 border border-dsj-grey2 p-2 aspect-square max-h-10 rounded-lg text-dsj-yellow text-sm shadow-none cursor-pointer" />
                             <IconField
-                                class="az-filter flex items-center gap-x-2 border border-dsj-grey2 px-2 max-w-8 rounded-lg text-dsj-yellow text-sm shadow-none cursor-pointer">
-                                <InputIcon class="pi pi-sliders-v h-4" />
-                                <InputText :model-value="filterText" @input="updateFilterText" />
-                            </IconField>
-                            <IconField
-                                class="mobile-filters flex items-center gap-x-2 border border-dsj-grey2 px-2 max-w-8 rounded-lg text-dsj-yellow text-sm shadow-none cursor-pointer">
-                                <InputIcon class="pi pi-filter" />
-                                <InputText :model-value="filterText" @input="updateFilterText" />
+                                class="az-filter flex items-center gap-x-2 border border-dsj-grey2 p-2 aspect-square max-h-10 rounded-lg text-dsj-yellow text-sm shadow-none cursor-pointer">
+                                <InputIcon class="pi pi-sliders-v text-dsj-yellow" />
+                                <InputText v-model="azFilter" />
                             </IconField>
                         </div>
 
                         <IconField
-                            class="search-bar flex items-center gap-x-2 border border-dsj-grey2 p-2 max-h-10 max-w-72 rounded-lg text-dsj-yellow text-sm shadow-none">
+                            class="search-bar flex items-center gap-x-2 border border-dsj-grey2 p-2 max-h-10 w-full sm:max-w-72 rounded-lg text-dsj-yellow text-sm shadow-none">
                             <InputIcon class="pi pi-search" />
-                            <InputText :model-value="filterText" @input="updateFilterText" placeholder="Search"
-                                class="shadow-none" />
+                            <InputText v-model="searchBar" placeholder="Search" class="shadow-none" />
                         </IconField>
                     </div>
 
@@ -60,6 +52,9 @@ export default {
     },
     data() {
         return {
+            azFilter: '',
+            searchBar: '',
+            filterDate: '',
         }
     },
     methods: {

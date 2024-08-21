@@ -3,8 +3,7 @@
 
         <!-- Sidebar -->
         <Sidebar />
-
-
+        
         <!-- Main Content -->
         <div class="main-content flex flex-col w-full gap-y-5 p-4 lg:p-12">
 
