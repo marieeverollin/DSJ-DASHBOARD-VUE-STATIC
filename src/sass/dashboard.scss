@@ -2,15 +2,31 @@ html {
     scroll-behavior: smooth;
 }
 
+.sticky {
+    transition: all 0.5s ease-in-out;
+}
+
+/* Variables */
+$dsj-grey3: #A0A0A0;
+$dsj-grey4: #545454;
+$dsj-yellow: #FEC100;
+$green: #16a34a;
+$white: #fff;
+$border-color: #E3E3E3;
+$small-font-size: 10px;
+$placeholder-color: $dsj-yellow;
+$input-background: transparent;
+
+
 /* Components PrimeVue */
 .p-fileupload {
     display: flex;
     justify-content: flex-start;
-    color: #A0A0A0;
+    color: $dsj-grey3;
 
     span {
         font-size: 14px;
-        color: #545454;
+        color: $dsj-grey4;
     }
 
     .p-button {
@@ -19,7 +35,7 @@ html {
         }
 
         span {
-            color: #fff;
+            color: $white;
         }
 
         .p-button-label {
@@ -28,20 +44,11 @@ html {
     }
 }
 
-.p-button.add-date,
-.p-button.delete-date {
-    .p-button-icon::before {
-        font-size: 10px;
-        display: block;
-    }
-
-    .p-button-label {
-        font-weight: 300;
-    }
-}
-
 .p-button {
-    .p-button-icon::before {
+
+    .p-button-icon::before,
+    .p-button.add-date .p-button-icon::before,
+    .p-button.delete-date .p-button-icon::before {
         font-size: 10px;
         display: block;
     }
@@ -53,119 +60,120 @@ html {
 
 .p-checkbox {
     .p-checkbox-box {
-        background-color: #fff;
-        border: 1px solid #E3E3E3;
+        background-color: $white;
+        border: 1px solid $border-color;
         box-shadow: none;
     }
-}
 
-.p-checkbox.p-checkbox-checked {
-    svg {
-        color: #16a34a;
+    &.p-checkbox-checked {
+        svg {
+            color: $green;
+        }
     }
 }
 
-.p-textarea {
-    color: #545454;
-}
-
+.p-textarea,
 .p-inputtext {
-    color: #545454;
+    color: $dsj-grey4;
     box-shadow: none;
 }
 
 .p-paginator-current {
-    color: #A0A0A0;
+    color: $dsj-grey3;
 }
 
 .p-paginator-first,
 .p-paginator-prev,
 .p-paginator-next,
 .p-paginator-last {
-    color: #FEC100;
+    color: $dsj-yellow;
+
+    &.p-disabled {
+        color: $border-color;
+    }
 }
 
-.p-paginator-first.p-disabled,
-.p-paginator-prev.p-disabled,
-.p-paginator-next.p-disabled,
-.p-paginator-last.p-disabled {
-    color: #E3E3E3;
+.p-datepicker,
+.p-datepicker-timeonly {
+    input::placeholder {
+        color: $dsj-grey4;
+        box-shadow: none;
+    }
+
+    &-day-selected {
+        background-color: $dsj-yellow;
+    }
 }
 
-.p-datepicker input::placeholder {
-    color: #545454;
-    box-shadow: none;
+.date-picker {
+    input {
+        color: transparent;
+        pointer-events: none;
+    }
+
+    .pi-calendar {
+        color: inherit;
+    }
 }
 
-.p-datepicker-timeonly input::placeholder {
-    color: #545454;
-    box-shadow: none;
-}
 /* ----------------------------------------- */
 
+/* Buttons */
+.btn-sm-arrow {
+    .p-button-icon::before {
+        font-size: 14px;
+    }
+}
+
+/* ----------------------------------------- */
+
+/* Sidebar */
 .sidebar {
-    border-right: 1px solid #E3E3E3;
+    border-right: 1px solid $border-color;
 
     .btn-add-event {
         .pi-plus {
-            font-size: 10px;
+            font-size: $small-font-size;
         }
     }
 }
 
+/* Filterbar */
 .filterbar {
-    .date-picker {
-
-        .p-inputtext {
-            background-color: transparent;
+    .date-picker,
+    .az-filter,
+    .mobile-filters,
+    .search-bar {
+        input {
+            background-color: $input-background;
             box-shadow: none;
-        }
 
-        .p-datepicker-input-icon-container {
-            color: #FEC100;
+            &::placeholder {
+                color: $placeholder-color;
+            }
         }
     }
 
-    .az-filter {
+    .date-picker .p-inputtext {
+        background-color: $input-background;
+        box-shadow: none;
+    }
 
-        input {
-            background-color: transparent;
-            box-shadow: none;
-        }
-
-        input::placeholder {
-            color: #FEC100;
-        }
+    .date-picker .p-datepicker-input-icon-container,
+    .search-bar .pi-search {
+        color: $dsj-yellow;
     }
 
     .mobile-filters {
         padding-left: 7px;
-
-        input {
-            background-color: transparent;
-            box-shadow: none;
-        }
-
-        input::placeholder {
-            color: #FEC100;
-        }
     }
 
-    .search-bar {
-        input {
-            background-color: transparent;
-            box-shadow: none;
-            padding-left: 30px;
-        }
-        input::placeholder {
-            color: #FEC100;
-        }
-        .pi-search {
-            color: #FEC100;
-        }
+    .search-bar input {
+        padding-left: 30px;
     }
 }
 
+/* Single Event */
 .single-event {
     flex: 1;
     max-width: 32%;
@@ -177,10 +185,10 @@ html {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
 
-        .p-button .p-button-icon::before {
-            font-size: 10px;
+            &::before {
+                font-size: $small-font-size;
+            }
         }
 
         a:has(.pi) {

@@ -38,7 +38,7 @@
             <div class="flex gap-x-4">
                 <div class="input-group flex items-center gap-x-5 w-3/12">
                     <label for="repeatingEvent" class="text-dsj-grey4 w-7/12"> Repeating Event </label>
-                    <Checkbox v-model="repeatingEvent" inputId="repeatingEvent" name="repeatingEvent"
+                    <Checkbox v-model="repeatingEvent" inputId="repeatingEvent" name="repeatingEvent" :binary="true"
                         value="repeatingEvent" class="w-5/12" />
                 </div>
 
@@ -54,7 +54,7 @@
                 <div class="input-group flex items-center gap-x-5 w-3/12">
                     <label for="repeatOneYear" class="text-dsj-grey4 w-7/12"> Repeat for one year </label>
                     <Checkbox v-model="repeatOneYear" inputId="repeatOneYear" name="repeatOneYear" value="repeatOneYear"
-                        class="w-5/12" />
+                        :binary="true" class="w-5/12" />
                 </div>
 
                 <div v-if="!repeatOneYear" class="input-group flex items-center gap-x-5 w-5/12">

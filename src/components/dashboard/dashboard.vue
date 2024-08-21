@@ -2,12 +2,12 @@
     <div class="dashboard-container w-full relative flex flex-col md:flex-row bg-white rounded-2xl shadow-sm">
 
         <!-- Sidebar -->
-        <Sidebar :filters="eventFilters" :selectedFilter="selectedFilter" :icondisplay="icondisplay"
+        <Sidebar :filters="eventFilters" :selectedFilter="selectedFilter" 
             @update:filter="selectFilter" />
 
 
         <!-- Main Content -->
-        <div class="main-content flex flex-col md:w-5/6 gap-y-5 p-4 lg:p-12">
+        <div class="main-content flex flex-col md:w-full gap-y-5 p-4 lg:p-12">
             <div class="filter-row flex md:flex-col-reverse xl:flex-row w-full justify-between gap-4">
 
                 <h2 class="filterSelected text-xl uppercase text-dsj-yellow font-normal">{{ selectedFilter }}</h2>
@@ -16,11 +16,11 @@
 
 
                 <div class="hidden filterbar md:flex justify-end gap-2">
-                    <DatePicker v-model="icondisplay" showIcon fluid iconDisplay="input"
+                    <DatePicker v-model="filterDate" showIcon fluid iconDisplay="input" placeholder=" "
                         class="date-picker flex items-center gap-x-2 border border-dsj-grey2 p-2 aspect-square max-h-10 rounded-lg text-dsj-yellow text-sm shadow-none cursor-pointer" />
                     <IconField
                         class="az-filter flex items-center gap-x-2 border border-dsj-grey2 p-2 aspect-square max-h-10 rounded-lg text-dsj-yellow text-sm shadow-none cursor-pointer">
-                        <InputIcon class="pi pi-sliders-v" />
+                        <InputIcon class="pi pi-sliders-v text-dsj-yellow" />
                         <InputText v-model="azFilter" />
                     </IconField>
                     <IconField
@@ -46,7 +46,7 @@ export default {
             selectedFilter: 'All Events',
             azFilter: '',
             searchBar: '',
-            icondisplay: '',
+            filterDate: '',
             events: [
                 {
                     id: 1,

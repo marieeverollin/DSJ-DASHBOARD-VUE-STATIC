@@ -14,8 +14,8 @@
             <div class="input-group flex items-center gap-x-5">
                 <label for="event-header-img" class="text-dsj-grey4 w-3/12"> Header Image </label>
                 <div class="w-9/12">
-                    <FileUpload ref="headerFileUpload" mode="basic" name="featured[]" url="/api/upload"
-                        accept="image/*" :maxFileSize="1000000" @upload="onUpload"
+                    <FileUpload ref="headerFileUpload" mode="basic" name="featured[]" url="/api/upload" accept="image/*"
+                        :maxFileSize="1000000" @upload="onUpload"
                         class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm">
                     </FileUpload>
                 </div>
@@ -25,7 +25,7 @@
 
             <div class="input-group flex items-center gap-x-5">
                 <label for="featured-img" class="text-dsj-grey4"> Featured Event </label>
-                <Checkbox v-model="featuredEvent" inputId="featured" name="featured" value="featured" />
+                <Checkbox v-model="featuredEvent" inputId="featured" name="featured" value="featured" :binary="true" />
             </div>
 
             <div :class="{ hidden: !featuredEvent }" class="input-group flex items-center gap-x-5">
@@ -48,12 +48,15 @@
 </template>
 
 <script>
+import { onUpdated } from 'vue';
+
 export default {
     data() {
         return {
             eventDescription: '',
             eventTitle: '',
-            featuredEvent: false
+            featuredEvent: false,
+            onUpload: '',
         };
     },
 };

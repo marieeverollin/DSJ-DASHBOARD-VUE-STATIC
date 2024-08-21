@@ -3,10 +3,11 @@
         <div class="bg-dsj-yellow-15 p-5 rounded-t-xl flex items-center justify-between">
             <h3 class="text-lg text-dsj-grey3">Basic Slider</h3>
             <div class="flex gap-x-3 items-center">
-                <InputIcon
-                    class="pi pi-angle-down items-center justify-center gap-x-2 bg-dsj-yellow text-white p-2 rounded-md text-xs uppercase h-fit cursor-pointer" />
-                <InputIcon
-                    class="pi pi-angle-up items-center justify-center gap-x-2 bg-dsj-yellow text-white p-2 rounded-md text-xs uppercase h-fit cursor-pointer" />
+                <Button icon="pi pi-angle-up" severity="secondary"
+                    class="btn-sm-arrow items-center justify-center bg-dsj-yellow text-white p-2 rounded-md text-xs uppercase h-fit w-8" />
+
+                <Button icon="pi pi-angle-down" severity="secondary"
+                    class="btn-sm-arrow items-center justify-center bg-dsj-yellow text-white p-2 rounded-md text-xs uppercase h-fit w-8" />
 
                 <Button label="Delete" icon="pi pi-times" @click="$emit('deleteComponent', index)" severity="secondary"
                     class="btn-sm-delete items-center justify-center gap-x-2 bg-dsj-light-red text-white p-2 rounded-md text-xs uppercase h-fit" />
@@ -27,6 +28,7 @@ export default {
     props: ['index'],
     data() {
         return {
+            onUpload: '',
         };
     },
 };

@@ -6,7 +6,7 @@ import Aura from '@primevue/themes/aura';
 import 'primeicons/primeicons.css';
 // import { GoogleMap, Marker } from 'vue3-google-map';
 
-import Dashboard from '../components/dashboard/dashboard.vue';
+/* PrimeVue */
 import Checkbox from 'primevue/checkbox';
 import InputNumber from 'primevue/inputnumber';
 import FloatLabel from 'primevue/floatlabel';
@@ -26,13 +26,13 @@ import Select from 'primevue/select';
 import MultiSelect from 'primevue/multiselect';
 import FileUpload from 'primevue/fileupload';
 
+/* My Components */
+import Dashboard from '../components/dashboard/dashboard.vue';
 import Sidebar from '../components/sidebar/Sidebar.vue';
-
 import EventsGroup from '../components/dashboard/events/EventsGroup.vue';
 import EventSingle from '../components/dashboard/events/EventSingle.vue';
 import EventTag from '../components/dashboard/events/EventTag.vue';
 import EventButtons from '../components/dashboard/events/EventButtons.vue';
-
 import EventInformation from '../components/forms/shared/EventInformation.vue';
 import EventDates from '../components/forms/shared/EventDates.vue';
 import EventLocation from '../components/forms/shared/EventLocation.vue';
@@ -43,8 +43,10 @@ import FullImage from '../components/forms/shared/custom/FullImage.vue';
 import ParagraphText from '../components/forms/shared/custom/ParagraphText.vue';
 import ThreeImageCombo from '../components/forms/shared/custom/ThreeImageCombo.vue';
 import Video from '../components/forms/shared/custom/Video.vue';
+import SidebarAdd from '../components/sidebar/sidebars/SidebarAdd.vue';
+import SidebarEdit from '../components/sidebar/sidebars/SidebarEdit.vue';
+import SidebarDashboard from '../components/sidebar/sidebars/SidebarDashboard.vue';
 
-//import btnDeleteSmall from '../components/buttons/btnDeleteSmall.vue';
 
 export const vueApp = () => {
     const appSetup = createApp(App);
@@ -97,7 +99,6 @@ export const vueApp = () => {
     appSetup.component('EventSingle', EventSingle);
     appSetup.component('EventTag', EventTag);
     appSetup.component('EventButtons', EventButtons);
-
     appSetup.component('EventInformation', EventInformation);
     appSetup.component('EventDates', EventDates);
     appSetup.component('EventLocation', EventLocation);
@@ -109,8 +110,9 @@ export const vueApp = () => {
     appSetup.component('ThreeImageCombo', ThreeImageCombo);
     appSetup.component('Video', Video);
     appSetup.component('Sidebar', Sidebar);
-
-    //appSetup.component('btnDeleteSmall', btnDeleteSmall);
+    appSetup.component('SidebarAdd', SidebarAdd);
+    appSetup.component('SidebarEdit', SidebarEdit);
+    appSetup.component('SidebarDashboard', SidebarDashboard);
 
     appSetup.mount('#app');
 }
