@@ -1,9 +1,8 @@
 <template>
-    <div
-        class="event-form-container relative flex flex-col md:flex-row bg-white rounded-2xl shadow-md overflow-visible">
+    <div class="event-form-container relative flex flex-col md:flex-row bg-white rounded-2xl shadow-sm">
 
         <!-- Sidebar -->
-        <aside class="sidebar w-full md:w-56 h-auto">
+        <aside class="sidebar w-full md:w-1/6 min-w-1/6 h-auto">
             <div class="sticky top-0 left-0 right-0">
                 <div class="flex flex-col gap-y-4 p-4 lg:px-5 lg:py-12 z-10">
 
@@ -50,7 +49,7 @@
 
 
         <!-- Main Content -->
-        <div class="main-content flex flex-col flex-1 gap-y-5 p-4 lg:p-12">
+        <div class="main-content flex flex-col w-5/6 gap-y-5 p-4 lg:p-12">
 
             <h2 class="filterSelected text-xl uppercase text-dsj-yellow font-normal">Add New Event</h2>
 

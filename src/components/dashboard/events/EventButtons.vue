@@ -1,6 +1,6 @@
 <template>
     <div class="event-buttons flex flex-wrap gap-2 justify-between">
-        <router-link to="/events/edit"
+        <router-link :to="{ path: '/events/edit/', hash: '#event-dates' }"
             class="event-buttons flex gap-x-2 rounded-md text-xs text-dsj-grey4 bg-dsj-grey1 hover:bg-dsj-yellow hover:text-white transition-all px-2 py-1 uppercase">
             <i class="pi pi-plus"></i> Date
         </router-link>

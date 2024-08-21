@@ -4,6 +4,7 @@ import PrimeVue from 'primevue/config';
 import router from './router';
 import Aura from '@primevue/themes/aura';
 import 'primeicons/primeicons.css';
+// import { GoogleMap, Marker } from 'vue3-google-map';
 
 import Dashboard from '../components/dashboard/dashboard.vue';
 import Checkbox from 'primevue/checkbox';
@@ -63,6 +64,15 @@ export const vueApp = () => {
     });
 
     appSetup.use(router);
+
+    /*appSetup.use(GoogleMap, {
+        load: {
+            key: 'AIzaSyBfTsENPvt4dnfgQSxh-76CMzU3zf-BATw',
+        },
+    });
+
+    appSetup.component('GoogleMap', GoogleMap.GoogleMap);
+    appSetup.component('GoogleMapMarker', GoogleMap.Marker); */
 
     appSetup.component('Checkbox', Checkbox);
     appSetup.component('InputNumber', InputNumber);

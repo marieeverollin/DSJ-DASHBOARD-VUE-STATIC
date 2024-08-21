@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 /* Components PrimeVue */
 .p-fileupload {
     display: flex;
@@ -97,7 +101,6 @@
     color: #545454;
     box-shadow: none;
 }
-
 /* ----------------------------------------- */
 
 .sidebar {
@@ -112,7 +115,6 @@
 
 .filterbar {
     .date-picker {
-        padding-left: 7px;
 
         .p-inputtext {
             background-color: transparent;
@@ -120,18 +122,11 @@
         }
 
         .p-datepicker-input-icon-container {
-            top: auto;
-            right: auto;
-            margin-top: 0px;
             color: #FEC100;
-            align-self: center;
-            display: flex;
-            align-items: center;
         }
     }
 
     .az-filter {
-        padding-left: 7px;
 
         input {
             background-color: transparent;
@@ -160,9 +155,12 @@
         input {
             background-color: transparent;
             box-shadow: none;
+            padding-left: 30px;
         }
-
         input::placeholder {
+            color: #FEC100;
+        }
+        .pi-search {
             color: #FEC100;
         }
     }

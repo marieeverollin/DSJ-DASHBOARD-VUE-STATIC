@@ -45,11 +45,9 @@
             </div>
 
             <div class="flex-1 w-6/12 p-5">
-                <div class="rounded-md bg-dsj-grey2 w-full h-full">
-                    Google Maps here
-                    <!-- <GoogleMap api-key="YOUR_GOOGLE_MAPS_API_KEY" style="width: 100%; height: 500px" :center="center"
-                        :zoom="15">
-                        <Marker :options="{ position: center }" />
+                <div class="rounded-md bg-dsj-grey1 w-full h-full">
+                    <!-- <GoogleMap :center="{ lat: 40.7128, lng: -74.0060 }" :zoom="10" style="width: 100%; height: 400px;">
+                        <GoogleMapMarker :position="{ lat: 40.7128, lng: -74.0060 }" />
                     </GoogleMap> -->
                 </div>
             </div>
@@ -58,13 +56,10 @@
 </template>
 
 <script>
-// import { GoogleMap, Marker } from 'vue3-google-map';
-// import VueGoogleAutocomplete from "vue-google-autocomplete";
-
 export default {
-    // components: { VueGoogleAutocomplete },
     data() {
         return {
+            // name: 'MyMapComponent',
             address: "",
             locationName: "",
             city: "",
@@ -85,16 +80,8 @@ export default {
                 { name: 'Saskatchewan', value: 'sk' },
                 { name: 'Yukon', value: 'yt' },
             ],
-            //center: { lat: 40.689247, lng: -74.044502 },
+        // center: { lat: 40.689247, lng: -74.044502 },
         };
-    },
-    mounted() {
-        // this.$refs.address.focus();
-    },
-    methods: {
-        // getAddressData: function (addressData, placeResultData, id) {
-        //     this.address = addressData;
-        // },
     },
 };
 </script>

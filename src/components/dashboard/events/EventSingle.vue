@@ -34,7 +34,6 @@
             </div>
         </div>
 
-        <!-- Pass the index to EventButtons -->
         <EventButtons :index="index" @delete-event="$emit('delete-event', $event)" />
     </div>
 </template>

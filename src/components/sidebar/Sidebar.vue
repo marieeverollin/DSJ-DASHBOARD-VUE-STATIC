@@ -1,5 +1,5 @@
 <template>
-    <aside class="sidebar w-full md:w-56 min-w-56 h-auto">
+    <aside class="sidebar w-full md:w-1/6 min-w-1/6 h-auto">
         <div class="sticky top-0 left-0 right-0">
             <div class="flex flex-col gap-y-4 p-4 lg:px-5 lg:py-12 z-10">
 

@@ -13,6 +13,29 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
+    scrollBehavior(to, from, savedPosition) {
+        console.log('Saved position:', savedPosition);
+        console.log('To.hash:', to.hash);
+        if (savedPosition) {
+            return savedPosition;
+        }
+        if (to.hash) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    const element = document.querySelector(to.hash);
+                    console.log('Element found:', element);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                        setTimeout(() => {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                        }, 100); 
+                    }
+                    resolve({ left: 0, top: 0 });
+                }, 500);
+            });
+        }
+        return { x: 0, y: 0 };
+    },
 });
 
 export default router;

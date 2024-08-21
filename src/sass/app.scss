@@ -13,5 +13,6 @@
 
 .main-wrapper {
     @apply w-10/12 xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto;
+    @apply overflow-x-hidden;    
 }
 

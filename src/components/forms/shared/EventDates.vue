@@ -1,5 +1,5 @@
 <template>
-    <div id="event-dates-block" class="event-dates border border-dsj-grey2 rounded-xl">
+    <div id="event-dates" class="event-dates border border-dsj-grey2 rounded-xl">
         <div class="dates-header flex items-center justify-between bg-dsj-yellow-15 p-5 rounded-t-xl">
             <h3 class="text-lg text-dsj-grey3">Event Dates</h3>
             <h4 class="text-sm text-dsj-grey3">{{ dates.length }} date{{ dates.length > 1 ? 's' : '' }}</h4>
@@ -88,10 +88,6 @@ export default {
                 { name: 'Daily', value: 'daily' },
                 { name: 'Weekly', value: 'weekly' },
                 { name: 'Monthly', value: 'monthly' },
-            ],
-            endingOnOptions: [
-                { name: 'Specific Date', value: 'specific-date' },
-                { name: 'After X Occurrences', value: 'after-x' },
             ],
         };
     },
