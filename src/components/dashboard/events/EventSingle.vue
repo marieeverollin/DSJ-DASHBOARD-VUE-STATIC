@@ -34,15 +34,17 @@
             </div>
         </div>
 
-        <EventButtons />
+        <!-- Pass the index to EventButtons -->
+        <EventButtons :index="index" @delete-event="$emit('delete-event', $event)" />
     </div>
 </template>
 
 <script>
 export default {
     props: {
-        event: Object
-    }
+        event: Object,
+        index: Number
+    },
 };
 </script>
 

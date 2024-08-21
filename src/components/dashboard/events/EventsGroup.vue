@@ -1,6 +1,8 @@
 <template>
     <div class="flex flex-col lg:flex-row lg:flex-wrap gap-6">
-        <EventSingle v-for="event in paginatedEvents" :key="event.id" :event="event" />
+        <EventSingle v-for="(event, index) in paginatedEvents" :key="index" :event="event" :index="index + first"
+            @delete-event="removeEvent"
+            />
     </div>
 
     <Paginator v-model:first="first" :rows="rowsPerPage" :totalRecords="totalRecords"
@@ -130,6 +132,11 @@ export default {
             return this.events.slice(start, end);
         }
     },
+    methods: {
+        removeEvent(index) {
+            this.events.splice(index, 1);
+        }
+    }
 };
 </script>
 

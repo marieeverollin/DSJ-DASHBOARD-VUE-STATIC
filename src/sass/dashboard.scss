@@ -184,6 +184,18 @@
         .p-button .p-button-icon::before {
             font-size: 10px;
         }
+
+        a:has(.pi) {
+            font-weight: 300;
+
+            .pi {
+                font-size: 9px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
     }
 }
 
