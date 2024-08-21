@@ -41,9 +41,9 @@
                         class="pi pi-plus"></i>Add Event</router-link>
 
                 <div class="hidden sidebar-filters md:flex flex-wrap md:flex-col gap-2 md:gap-y-5">
-                    <a v-for="(event, index) in events" :key="index"
-                        :class="['border transition-all border-dsj-grey2 text-dsj-grey3 hover:text-white hover:bg-dsj-grey3 hover:border-dsj-grey3 py-1.5 md:py-2.5 px-3 md:px-7 rounded-lg md:rounded-xl text-sm cursor-pointer', { 'bg-dsj-grey3 border-dsj-grey3 text-white': selectedFilter === event }]"
-                        @click="selectFilter(event)">{{ event }}</a>
+                    <a v-for="(filter, index) in filters" :key="index"
+                        :class="['border transition-all border-dsj-grey2 text-dsj-grey3 hover:text-white hover:bg-dsj-grey3 hover:border-dsj-grey3 py-1.5 md:py-2.5 px-3 md:px-7 rounded-lg md:rounded-xl text-sm cursor-pointer', { 'bg-dsj-grey3 border-dsj-grey3 text-white': selectedFilter === filter }]"
+                        @click="selectFilter(filter)">{{ filter }}</a>
                 </div>
             </div>
         </div>
@@ -53,18 +53,24 @@
 <script>
 export default {
     props: {
-        events: Array,
+        filters: Array,
         selectedFilter: String,
+        icondisplay: String,
+        filterText: String,
+        },
+    data() {
+        return {
+        }
     },
     methods: {
-        selectFilter(event) {
-            this.$emit('update:filter', event);
+        selectFilter(filter) {
+            this.$emit('update:filter', filter);
         },
         updateFilterText(value) {
             this.$emit('update:filterText', value);
         },
         updateIconDisplay(value) {
-            this.$emit('update:icondisplay', value);
+            this.$emit('update:iconDisplay', value);
         }
     }
 };

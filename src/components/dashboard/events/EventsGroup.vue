@@ -1,8 +1,7 @@
 <template>
     <div class="flex flex-col lg:flex-row lg:flex-wrap gap-6">
         <EventSingle v-for="(event, index) in paginatedEvents" :key="index" :event="event" :index="index + first"
-            @delete-event="removeEvent"
-            />
+            @delete-event="removeEvent" />
     </div>
 
     <Paginator v-model:first="first" :rows="rowsPerPage" :totalRecords="totalRecords"
@@ -17,120 +16,37 @@ export default {
             type: Array,
             required: true,
         },
+        selectedFilter: String
     },
     data() {
         return {
             first: 0,
             rowsPerPage: 3,
-            events: [
-                {
-                    id: 1,
-                    date: {
-                        day: '10th',
-                        month: 'September',
-                        year: 2024,
-                        fullDate: 'September 10th 2024'
-                    },
-                    time: {
-                        from: '10:30:00 am',
-                        to: '12:00:00 pm'
-                    },
-                    status: 'upcoming',
-                    title: 'Learn to Longboard for Women+ with Sphere Adventure Programs',
-                    location: {
-                        address: '682-702 Main St',
-                        type: 'Station One Skate Park'
-                    }
-                },
-                {
-                    id: 2,
-                    date: {
-                        day: '5th',
-                        month: 'August',
-                        year: 2024,
-                        fullDate: 'August 5th 2024'
-                    },
-                    time: {
-                        from: ' 2:00:00 pm',
-                        to: ' 5:00:00 pm'
-                    },
-                    status: 'in progress',
-                    title: 'Celebrate New Brunswick Day at the Fundy Trail Provincial Park',
-                    location: {
-                        address: '3 Fundy Trail Parkway',
-                        type: 'Long Beach'
-                    }
-                },
-                {
-                    id: 3,
-                    date: {
-                        day: '5th',
-                        month: 'August',
-                        year: 2024,
-                        fullDate: 'August 5th 2024'
-                    },
-                    time: {
-                        from: ' 2:00:00 pm',
-                        to: ' 5:00:00 pm'
-                    },
-                    status: 'in progress',
-                    title: 'Celebrate New Brunswick Day at the Fundy Trail Provincial Park',
-                    location: {
-                        address: '3 Fundy Trail Parkway',
-                        type: 'Long Beach'
-                    }
-                },
-                {
-                    id: 4,
-                    date: {
-                        day: '25th',
-                        month: 'July',
-                        year: 2024,
-                        fullDate: 'July 25th 2024'
-                    },
-                    time: {
-                        from: ' 2:00:00 pm',
-                        to: ' 5:00:00 pm'
-                    },
-                    status: 'past',
-                    title: 'Ryan Naismith LIVE at the Five & Dime',
-                    location: {
-                        address: '40 Grannan Street',
-                        type: 'Five & Dime'
-                    }
-                },
-
-                {
-                    id: 5,
-                    date: {
-                        day: '5th',
-                        month: 'July',
-                        year: 2024,
-                        fullDate: 'July 5th 2024'
-                    },
-                    time: {
-                        from: ' 2:00:00 pm',
-                        to: ' 5:00:00 pm'
-                    },
-                    status: 'past',
-                    title: 'Ryan Naismith LIVE at the Five & Dime',
-                    location: {
-                        address: '40 Grannan Street',
-                        type: 'Five & Dime'
-                    }
-                },
-            ]
         };
     },
     computed: {
         totalRecords() {
-            return this.events.length;
+            return this.filteredEvents.length;
+        },
+        filteredEvents() {
+            if (this.selectedFilter === 'All Events') {
+                return this.events;
+            }
+            const filterText = this.selectedFilter.toLowerCase();
+            return this.events.filter((event) => {
+                const eventStatus = event.status.toLowerCase();
+                return (
+                    (filterText === 'upcoming events' && eventStatus === 'upcoming') ||
+                    (filterText === 'events in progress' && eventStatus === 'in progress') ||
+                    (filterText === 'past events' && eventStatus === 'past')
+                );
+            });
         },
         paginatedEvents() {
             const start = this.first;
             const end = start + this.rowsPerPage;
-            return this.events.slice(start, end);
-        }
+            return this.filteredEvents.slice(start, end);
+        },
     },
     methods: {
         removeEvent(index) {

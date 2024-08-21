@@ -11,7 +11,7 @@
                 <i class="pi pi-pencil"></i> Edit
             </router-link>
 
-            <router-link to="/events/id"
+            <router-link to="/events/edit"
                 class="event-buttons flex gap-x-2 rounded-md text-xs text-dsj-grey4 bg-dsj-grey1 hover:bg-dsj-yellow hover:text-white transition-all px-2 py-1 uppercase">
                 <i class="pi pi-eye"></i> View
             </router-link>

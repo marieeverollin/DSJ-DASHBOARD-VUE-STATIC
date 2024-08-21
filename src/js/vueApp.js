@@ -15,6 +15,7 @@ import Dialog from 'primevue/dialog';
 import Textarea from 'primevue/textarea';
 import Paginator from 'primevue/paginator';
 import Divider from 'primevue/divider';
+import InputIcon from 'primevue/inputicon';
 import InputText from 'primevue/inputtext';
 import InputGroup from 'primevue/inputgroup';
 import InputGroupAddon from 'primevue/inputgroupaddon';
@@ -72,6 +73,7 @@ export const vueApp = () => {
     appSetup.component('Textarea', Textarea);
     appSetup.component('Paginator', Paginator);
     appSetup.component('Divider', Divider);
+    appSetup.component('InputIcon', InputIcon);
     appSetup.component('InputText', InputText);
     appSetup.component('InputGroup', InputGroup);
     appSetup.component('InputGroupAddon', InputGroupAddon);
