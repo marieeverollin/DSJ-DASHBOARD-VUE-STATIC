@@ -3,7 +3,6 @@ html {
 }
 
 .sticky {
-    width: 224px;
     transition: all 0.5s ease-in-out;
 }
 
@@ -46,14 +45,12 @@ $input-background: transparent;
 }
 
 .p-button {
-
     .p-button-icon::before,
     .p-button.add-date .p-button-icon::before,
     .p-button.delete-date .p-button-icon::before {
         font-size: 10px;
         display: block;
     }
-
     .p-button-label {
         font-weight: 300;
     }
@@ -65,7 +62,6 @@ $input-background: transparent;
         border: 1px solid $border-color;
         box-shadow: none;
     }
-
     &.p-checkbox-checked {
         svg {
             color: $green;
@@ -88,7 +84,6 @@ $input-background: transparent;
 .p-paginator-next,
 .p-paginator-last {
     color: $dsj-yellow;
-
     &.p-disabled {
         color: $border-color;
     }
@@ -100,7 +95,6 @@ $input-background: transparent;
         color: $dsj-grey4;
         box-shadow: none;
     }
-
     &-day-selected {
         background-color: $dsj-yellow;
     }
@@ -111,10 +105,14 @@ $input-background: transparent;
         color: transparent;
         pointer-events: none;
     }
-
     .pi-calendar {
         color: inherit;
     }
+}
+
+.p-select-option-selected {
+    background-color: $dsj-yellow;
+    color: $white;
 }
 
 /* ----------------------------------------- */
@@ -231,6 +229,12 @@ $input-background: transparent;
         max-width: 100%;
         aspect-ratio: auto;
         flex: 1;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .dashboard-container .sidebar {
+        border-right: 0px;
     }
 }
 

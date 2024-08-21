@@ -14,8 +14,7 @@
                 <Button label="Add Event" icon="pi pi-plus"
                     class="btn-add-event md:hidden bg-dsj-yellow text-white py-2.5 px-3 rounded-lg text-sm w-fit" />
 
-
-                <div class="hidden filterbar md:flex justify-end gap-2">
+                <div class="hidden filterbar md:flex justify-end gap-2 flex-wrap">
                     <DatePicker v-model="filterDate" showIcon fluid iconDisplay="input" placeholder=" "
                         class="date-picker flex items-center gap-x-2 border border-dsj-grey2 p-2 aspect-square max-h-10 rounded-lg text-dsj-yellow text-sm shadow-none cursor-pointer" />
                     <IconField

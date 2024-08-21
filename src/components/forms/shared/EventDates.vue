@@ -27,9 +27,9 @@
 
                 <div class="w-2/12 flex justify-end">
                     <Button v-if="index === 0" label="Add Date" icon="pi pi-plus" @click="addDate" severity="secondary"
-                        class="add-date items-center justify-center gap-x-2 bg-dsj-yellow text-white px-2.5 py-1.5 rounded-md text-xs uppercase h-fit" />
+                        class="add-date items-center justify-center gap-x-2 bg-dsj-yellow text-white p-2 rounded-md text-xs uppercase h-fit" />
                     <Button v-else label="Delete" icon="pi pi-times" @click="removeDate(index)" severity="danger"
-                        class="delete-date items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5 rounded-md text-xs uppercase h-fit" />
+                        class="delete-date items-center justify-center gap-x-2 bg-dsj-light-red text-white p-2 rounded-md text-xs uppercase h-fit" />
                 </div>
             </div>
 

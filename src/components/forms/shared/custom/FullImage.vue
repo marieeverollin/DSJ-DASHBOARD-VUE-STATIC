@@ -14,23 +14,38 @@
             </div>
         </div>
 
-        <div class="flex gap-x-5 p-5">
+        <div class="flex justify-between items-center gap-x-5 p-5">
             <FileUpload ref="customSectImage" mode="basic" name="featured[]" url="/api/upload" accept="image/*"
-                :maxFileSize="1000000" @upload="onUpload"
+                :maxFileSize="1000000" @upload="onUpload" @select="onFileSelect"
                 class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm">
             </FileUpload>
+
+            <Button v-if="fileSelected" label="Delete" icon="pi pi-times" @click="removeImage"
+                class="delete-date items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5 rounded-md text-xs uppercase h-fit" />
         </div>
     </div>
 </template>
 
 <script>
 export default {
-        props: ['index'],
+    props: ['index'],
     data() {
         return {
-            onUpload: '',
+            fileSelected: false,
         };
     },
+    methods: {
+        onFileSelect(event) {
+            this.fileSelected = true;
+        },
+        onUpload(event) {
+            console.log("File uploaded:", event);
+        },
+        removeImage() {
+            this.$refs.customSectImage.clear();
+            this.fileSelected = false;
+        }
+    }
 };
 </script>
 

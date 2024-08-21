@@ -13,11 +13,13 @@
 
             <div class="input-group flex items-center gap-x-5">
                 <label for="event-header-img" class="text-dsj-grey4 w-3/12"> Header Image </label>
-                <div class="w-9/12">
-                    <FileUpload ref="headerFileUpload" mode="basic" name="featured[]" url="/api/upload" accept="image/*"
-                        :maxFileSize="1000000" @upload="onUpload"
+                <div class="flex items-center justify-between w-9/12">
+                    <FileUpload ref="headerFileUpload" mode="basic" name="headerImage" url="/api/upload"
+                        accept="image/*" :maxFileSize="1000000" @upload="onUpload" @select="onFileSelectHeaderImg"
                         class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm">
                     </FileUpload>
+                    <Button v-if="fileSelectedHeaderImg" label="Delete" icon="pi pi-times" @click="removeImageHeaderImg"
+                        class="delete-date items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5 rounded-md text-xs uppercase h-fit" />
                 </div>
             </div>
 
@@ -30,11 +32,14 @@
 
             <div :class="{ hidden: !featuredEvent }" class="input-group flex items-center gap-x-5">
                 <label for="featured-image-upload" class="text-dsj-grey4 w-3/12"> Featured Image </label>
-                <div class="w-9/12">
-                    <FileUpload ref="featuredFileUpload" mode="basic" name="featured[]" url="/api/upload"
-                        accept="image/*" :maxFileSize="1000000" @upload="onUpload"
+                <div class="flex items-center justify-between w-9/12">
+
+                    <FileUpload ref="featuredFileUpload" mode="basic" name="featuredImage" url="/api/upload"
+                        accept="image/*" :maxFileSize="1000000" @upload="onUpload" @select="onFileSelectFeaturedImg"
                         class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm">
                     </FileUpload>
+                    <Button v-if="fileSelectedFeaturedImg" label="Delete" icon="pi pi-times" @click="removeImageFeaturedImg"
+                        class="delete-date items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5 rounded-md text-xs uppercase h-fit" />
                 </div>
             </div>
 
@@ -48,17 +53,36 @@
 </template>
 
 <script>
-import { onUpdated } from 'vue';
-
 export default {
     data() {
         return {
             eventDescription: '',
             eventTitle: '',
             featuredEvent: false,
-            onUpload: '',
+            fileSelectedHeaderImg: false,
+            fileSelectedFeaturedImg: false,
+
         };
     },
+    methods: {
+        onFileSelectHeaderImg(event) {
+            this.fileSelectedHeaderImg = true;
+        },
+        onFileSelectFeaturedImg(event) {
+            this.fileSelectedFeaturedImg = true;
+        },
+        onUpload(event) {
+            console.log("File uploaded:", event);
+        },
+        removeImageHeaderImg() {
+            this.$refs.headerFileUpload.clear();
+            this.fileSelectedHeaderImg = false;
+        },
+        removeImageFeaturedImg() {
+            this.$refs.featuredFileUpload.clear();
+            this.fileSelectedFeaturedImg = false;
+        }
+    }
 };
 </script>
 

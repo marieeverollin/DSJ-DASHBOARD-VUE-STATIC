@@ -75,7 +75,7 @@ export default {
     }
 };
 
-document.addEventListener('scroll', function () {
+function updateStickyPosition() {
     const stickyElement = document.querySelector('.sidebar .sticky');
     const sidebarElement = document.querySelector('.sidebar');
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
@@ -92,7 +92,9 @@ document.addEventListener('scroll', function () {
         stickyElement.style.left = 'auto';
         stickyElement.style.width = 'auto';
     }
-});
+}
+document.addEventListener('scroll', updateStickyPosition);
+window.addEventListener('resize', updateStickyPosition);
 </script>
 
 <style scoped></style>

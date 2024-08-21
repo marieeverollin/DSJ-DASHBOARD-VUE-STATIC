@@ -69,7 +69,7 @@ export const vueApp = () => {
 
     /*appSetup.use(GoogleMap, {
         load: {
-            key: '',
+            key: 'AIzaSyBfTsENPvt4dnfgQSxh-76CMzU3zf-BATw',
         },
     });
 

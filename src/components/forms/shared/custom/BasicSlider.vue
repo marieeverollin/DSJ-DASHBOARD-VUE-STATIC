@@ -14,11 +14,15 @@
             </div>
         </div>
 
-        <div class="flex gap-x-5 p-5">
-            <FileUpload ref="customSectSlider" mode="basic" name="featured[]" url="/api/upload" accept="image/*"
-                :maxFileSize="1000000" @upload="onUpload"
-                class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm">
-            </FileUpload>
+        <div class="flex flex-col gap-y-5 p-5">
+            <div v-for="(upload, index) in uploads" :key="upload.id" class="flex gap-x-5 items-center justify-between">
+                <FileUpload :ref="`customSectSlider_${upload.id}`" mode="basic" :name="`featured[]_${index}`"
+                    url="/api/upload" accept="image/*" :maxFileSize="1000000" @upload="onUpload"
+                    @select="() => onFileSelect(index)" class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm">
+                </FileUpload>
+                <Button v-if="upload.fileSelected" label="Delete" icon="pi pi-times" @click="removeImage(index)"
+                    class="delete-date items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5 rounded-md text-xs uppercase h-fit" />
+            </div>
         </div>
     </div>
 </template>
@@ -28,9 +32,31 @@ export default {
     props: ['index'],
     data() {
         return {
-            onUpload: '',
+            uploads: [
+                { id: this.generateId(), fileSelected: false }
+            ]
         };
     },
+    methods: {
+        generateId() {
+            return Math.random().toString(36).substr(2, 9);
+        },
+        onFileSelect(index) {
+            this.uploads[index].fileSelected = true;
+            if (index === this.uploads.length - 1) {
+                this.uploads.push({ id: this.generateId(), fileSelected: false });
+            }
+        },
+        onUpload(event) {
+            console.log("File uploaded:", event);
+        },
+        removeImage(index) {
+            this.uploads.splice(index, 1);
+            if (this.uploads.length === 0 || this.uploads[this.uploads.length - 1].fileSelected) {
+                this.uploads.push({ id: this.generateId(), fileSelected: false });
+            }
+        }
+    }
 };
 </script>
 
