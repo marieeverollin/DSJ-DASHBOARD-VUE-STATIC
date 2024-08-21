@@ -45,12 +45,14 @@ $input-background: transparent;
 }
 
 .p-button {
+
     .p-button-icon::before,
     .p-button.add-date .p-button-icon::before,
     .p-button.delete-date .p-button-icon::before {
         font-size: 10px;
         display: block;
     }
+
     .p-button-label {
         font-weight: 300;
     }
@@ -62,6 +64,7 @@ $input-background: transparent;
         border: 1px solid $border-color;
         box-shadow: none;
     }
+
     &.p-checkbox-checked {
         svg {
             color: $green;
@@ -84,6 +87,7 @@ $input-background: transparent;
 .p-paginator-next,
 .p-paginator-last {
     color: $dsj-yellow;
+
     &.p-disabled {
         color: $border-color;
     }
@@ -95,6 +99,7 @@ $input-background: transparent;
         color: $dsj-grey4;
         box-shadow: none;
     }
+
     &-day-selected {
         background-color: $dsj-yellow;
     }
@@ -105,6 +110,7 @@ $input-background: transparent;
         color: transparent;
         pointer-events: none;
     }
+
     .pi-calendar {
         color: inherit;
     }
@@ -124,21 +130,26 @@ $input-background: transparent;
     }
 }
 
+.btn-add-event {
+    .pi {
+        font-size: 9px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 /* ----------------------------------------- */
 
 /* Sidebar */
 .sidebar {
     border-right: 1px solid $border-color;
-
-    .btn-add-event {
-        .pi-plus {
-            font-size: $small-font-size;
-        }
-    }
 }
 
 /* Filterbar */
 .filterbar {
+
     .date-picker,
     .az-filter,
     .mobile-filters,

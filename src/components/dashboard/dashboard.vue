@@ -6,11 +6,13 @@
 
         <!-- Main Content -->
         <div class="main-content flex flex-col md:w-full gap-y-5 p-4 lg:p-12">
-            <div class="filter-row flex md:flex-col lg:flex-row w-full items-center md:items-start justify-between gap-4">
 
+            <div
+                class="filter-row flex md:flex-col lg:flex-row w-full items-center md:items-start justify-between gap-4">
                 <h2 class="filterSelected text-xl uppercase text-dsj-yellow font-normal">{{ selectedFilter }}</h2>
-                <Button label="Add Event" icon="pi pi-plus"
-                    class="btn-add-event md:hidden bg-dsj-yellow text-white py-2.5 px-3 rounded-lg text-sm w-fit" />
+                <router-link to="/events/add"
+                    class="btn-add-event md:hidden bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm w-fit flex gap-2"><i
+                        class="pi pi-plus"></i>Add Event</router-link>
 
                 <div class="hidden filterbar md:flex md:justify-end gap-2">
                     <DatePicker v-model="filterDate" showIcon fluid iconDisplay="input" placeholder=" "
