@@ -55,7 +55,7 @@
                     </svg>
                     Save Changes</router-link>
 
-                <div class="flex items-center gap-x-2">
+                <div class="hidden md:flex items-center gap-x-2">
                     <Checkbox v-model="published" inputId="publish" name="publish" value="publish" />
                     <label for="publish" class="text-sm text-dsj-grey3"> Published </label>
                 </div>

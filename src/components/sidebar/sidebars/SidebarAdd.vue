@@ -1,5 +1,6 @@
 <template>
     <aside class="sidebar w-full md:w-56 min-w-56 h-auto">
+
         <div class="sidebar-content top-0 left-0 right-0">
             <div class="flex flex-col gap-y-4 p-4 lg:px-5 lg:py-12 z-10">
 
@@ -35,7 +36,7 @@
                     </svg>
                     Save New Event</router-link>
 
-                <div class="flex items-center gap-x-2">
+                <div class="hidden md:flex items-center gap-x-2">
                     <Checkbox v-model="published" inputId="publish" name="publish" value="publish" />
                     <label for="publish" class="text-sm text-dsj-grey3"> Published </label>
                 </div>
