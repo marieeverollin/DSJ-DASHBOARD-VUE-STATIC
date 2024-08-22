@@ -1,6 +1,6 @@
 <template>
     <aside class="sidebar w-full md:w-56 min-w-56 h-auto">
-        <div class="sticky top-0 left-0 right-0">
+        <div class="sidebar-content top-0 left-0 right-0">
             <div class="flex flex-col gap-y-4 p-4 lg:px-5 lg:py-12 z-10">
 
                 <div class="sidebar-header flex gap-4 flex-col-reverse justify-between gap-x-4w w-full">
@@ -53,27 +53,6 @@ export default {
         };
     },
 };
-
-function updateStickyPosition() {
-    const stickyElement = document.querySelector('.sidebar .sticky');
-    const sidebarElement = document.querySelector('.sidebar');
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    const sidebarRect = sidebarElement.getBoundingClientRect();
-
-    if (scrollPosition > 100) {
-        stickyElement.style.position = 'fixed';
-        stickyElement.style.top = '0';
-        stickyElement.style.left = sidebarRect.left + 'px';
-        stickyElement.style.width = sidebarRect.width + 'px';
-    } else {
-        stickyElement.style.position = 'relative';
-        stickyElement.style.top = 'auto';
-        stickyElement.style.left = 'auto';
-        stickyElement.style.width = 'auto';
-    }
-}
-document.addEventListener('scroll', updateStickyPosition);
-window.addEventListener('resize', updateStickyPosition);
 </script>
 
 <style scoped></style>

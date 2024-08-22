@@ -25,6 +25,7 @@ import ListBox from 'primevue/listbox';
 import Select from 'primevue/select';
 import MultiSelect from 'primevue/multiselect';
 import FileUpload from 'primevue/fileupload';
+import Drawer from 'primevue/drawer';
 
 /* My Components */
 import Dashboard from '../components/dashboard/dashboard.vue';
@@ -94,6 +95,7 @@ export const vueApp = () => {
     appSetup.component('Select', Select);
     appSetup.component('MultiSelect', MultiSelect);
     appSetup.component('FileUpload', FileUpload);
+    appSetup.component('Drawer', Drawer);
 
     appSetup.component('EventsGroup', EventsGroup);
     appSetup.component('EventSingle', EventSingle);

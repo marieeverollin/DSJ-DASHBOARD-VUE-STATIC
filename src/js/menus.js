@@ -49,7 +49,6 @@ export const initMenuFunctions = () => {
             $('header').removeClass('bg-white shadow-md')
         }
     });
-
 };
 
 export default initMenuFunctions;

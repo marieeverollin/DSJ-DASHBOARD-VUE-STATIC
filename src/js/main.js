@@ -9,6 +9,7 @@ import initBestsellers from './bestsellers';
 import initSuggestions from './suggestions';
 import initHeader from './headers';
 import initFilter from './filters';
+import initSticky from './sticky';
 import vueApp from './vueApp';
 
 $(document).ready(function () {
@@ -39,4 +40,7 @@ $(document).ready(function () {
 
     // initialize the vue app
     vueApp()
+
+    // initialize sticky sidebar
+    initSticky()
 })

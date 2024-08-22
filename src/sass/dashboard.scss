@@ -1,11 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
-.sticky {
-    transition: all 0.5s ease-in-out;
-}
-
 /* Variables */
 $dsj-grey3: #A0A0A0;
 $dsj-grey4: #545454;
@@ -17,6 +9,22 @@ $small-font-size: 10px;
 $placeholder-color: $dsj-yellow;
 $input-background: transparent;
 
+/* ----------------------------------------- */
+
+/* Sticky Effect */
+.sidebar {
+    .sidebar-content {
+        transition: all 0.5s ease-in-out;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .sticky-active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----------------------------------------- */
 
 /* Components PrimeVue */
 .p-fileupload {
@@ -121,6 +129,18 @@ $input-background: transparent;
     color: $white;
 }
 
+.p-drawer-title {
+    color: $dsj-yellow;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.p-drawer-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
 /* ----------------------------------------- */
 
 /* Buttons */
@@ -149,9 +169,15 @@ $input-background: transparent;
 
 /* Filterbar */
 .filterbar {
-
+    .p-button {
+        padding-left: 16px;
+        .p-button-icon::before {
+            font-size: 16px;
+        }
+    }
     .date-picker,
     .az-filter,
+    .tag-filter,
     .mobile-filters,
     .search-bar {
         input {
@@ -183,12 +209,20 @@ $input-background: transparent;
     }
 }
 
+.filters-mobile {
+    .p-button {
+        padding-left: 16px;
+        .p-button-icon::before {
+            font-size: 16px;
+        }
+    }
+}
+
 /* Single Event */
 .single-event {
     flex: 1;
     max-width: 32%;
     aspect-ratio: 1/1;
-
     .event-buttons {
         .p-button .p-button-icon {
             display: flex;
@@ -200,7 +234,6 @@ $input-background: transparent;
                 font-size: $small-font-size;
             }
         }
-
         a:has(.pi) {
             font-weight: 300;
 
@@ -243,8 +276,21 @@ $input-background: transparent;
     }
 }
 
+@media screen and (max-width: 800px) {
+    .filterbar {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .dashboard-container .sidebar {
         border-right: 0px;
     }
+
+    .p-datepicker-panel {
+        right: 0;
+        margin: auto;
+    }
+    
 }

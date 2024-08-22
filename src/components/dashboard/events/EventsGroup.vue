@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col lg:flex-row lg:flex-wrap gap-6">
-        <EventSingle v-for="(event, index) in paginatedEvents" :key="index" :event="event" :index="index + first"
-            @delete-event="removeEvent" />
+        <EventSingle v-for="(event, index) in paginatedEvents" :key="event.id" :event="event" :index="index + first"
+            @delete-event="removeEvent(event.id)" />
     </div>
 
     <Paginator v-model:first="first" :rows="rowsPerPage" :totalRecords="totalRecords"
@@ -49,9 +49,22 @@ export default {
         },
     },
     methods: {
-        removeEvent(index) {
-            this.events.splice(index, 1);
+        generateId() {
+            return Math.random().toString(36).substr(2, 9);
+        },
+        removeEvent(id) {
+            const index = this.events.findIndex(event => event.id === id);
+            if (index !== -1) {
+                this.events.splice(index, 1);
+            }
         }
+    },
+    created() {
+        this.events.forEach(event => {
+            if (!event.id) {
+                event.id = this.generateId();
+            }
+        });
     }
 };
 </script>
