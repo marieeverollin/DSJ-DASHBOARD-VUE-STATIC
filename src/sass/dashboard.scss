@@ -254,6 +254,11 @@ $input-background: transparent;
     }
 }
 
+/* Custom Content */
+.custom-section>div:last-of-type {
+    margin-bottom: 20px;
+}
+
 /* Responsive */
 @media screen and (max-width: 1366px) {
     .single-event {

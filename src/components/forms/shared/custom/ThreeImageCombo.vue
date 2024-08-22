@@ -1,5 +1,5 @@
 <template>
-    <div id="custom-image-combo" class="border border-dsj-grey2 rounded-xl">
+    <div id="custom-image-combo" class="border border-dsj-grey2 rounded-xl  mx-5">
         <div
             class="bg-dsj-yellow-15 p-2.5 md:p-5 rounded-t-xl flex md:items-center justify-between md:flex-row flex-col-reverse gap-y-2">
             <h3 class="text-lg text-dsj-grey3">3 Image Combo</h3>

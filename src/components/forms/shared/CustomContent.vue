@@ -22,9 +22,8 @@
                 class="items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm" />
         </div>
 
-        <div class="flex flex-col gap-y-4 p-5">
-            <component v-for="(component, index) in components" :key="component.id" :is="component.name" :index="index"
-                @deleteComponent="deleteComponent" />
+        <div class="custom-section flex flex-col gap-y-5">
+            <component v-for="(component, index) in components" :key="component.id" :is="component.name" :index="index" @deleteComponent="deleteComponent" />
         </div>
     </div>
 </template>
