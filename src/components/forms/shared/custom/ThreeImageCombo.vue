@@ -1,21 +1,25 @@
 <template>
     <div id="custom-image-combo" class="border border-dsj-grey2 rounded-xl">
-        <div class="bg-dsj-yellow-15 p-5 rounded-t-xl flex items-center justify-between">
+        <div
+            class="bg-dsj-yellow-15 p-2.5 md:p-5 rounded-t-xl flex md:items-center justify-between md:flex-row flex-col-reverse gap-y-2">
             <h3 class="text-lg text-dsj-grey3">3 Image Combo</h3>
-            <div class="flex gap-x-3 items-center">
-                <Button icon="pi pi-angle-up" severity="secondary"
-                    class="btn-sm-arrow items-center justify-center bg-dsj-yellow text-white p-2 rounded-md text-xs uppercase h-fit w-8" />
+            <div class="flex gap-x-3 items-center justify-between flex-row-reverse md:flex-row">
 
-                <Button icon="pi pi-angle-down" severity="secondary"
-                    class="btn-sm-arrow items-center justify-center bg-dsj-yellow text-white p-2 rounded-md text-xs uppercase h-fit w-8" />
+                <div class="flex gap-x-3 items-center">
+                    <Button icon="pi pi-angle-up" severity="secondary"
+                        class="btn-sm-arrow items-center justify-center bg-dsj-yellow text-white p-2 rounded-md text-xs uppercase h-fit w-8" />
+
+                    <Button icon="pi pi-angle-down" severity="secondary"
+                        class="btn-sm-arrow items-center justify-center bg-dsj-yellow text-white p-2 rounded-md text-xs uppercase h-fit w-8" />
+                </div>
 
                 <Button label="Delete" icon="pi pi-times" @click="$emit('deleteComponent', index)" severity="secondary"
                     class="btn-sm-delete items-center justify-center gap-x-2 bg-dsj-light-red text-white p-2 rounded-md text-xs uppercase h-fit" />
             </div>
         </div>
 
-        <div class="flex gap-x-5 p-5">
-            <div class="flex flex-col gap-y-2 w-1/3">
+        <div class="flex flex-col gap-5 p-2.5 md:p-5">
+            <div class="flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full">
                 <FileUpload ref="customSectCombo1" mode="basic" name="comboImage1[]" url="/api/upload" accept="image/*"
                     :maxFileSize="1000000" @upload="onUpload" @select="onFileSelect(1)"
                     class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm">
@@ -24,7 +28,7 @@
                     class="delete-date w-fit items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5 rounded-md text-xs uppercase h-fit" />
             </div>
 
-            <div class="flex flex-col gap-y-2 w-1/3">
+            <div class="flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full">
                 <FileUpload ref="customSectCombo2" mode="basic" name="comboImage2[]" url="/api/upload" accept="image/*"
                     :maxFileSize="1000000" @upload="onUpload" @select="onFileSelect(2)"
                     class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm">
@@ -33,7 +37,7 @@
                     class="delete-date w-fit items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5 rounded-md text-xs uppercase h-fit" />
             </div>
 
-            <div class="flex flex-col gap-y-2 w-1/3">
+            <div class="flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full">
                 <FileUpload ref="customSectCombo3" mode="basic" name="comboImage3[]" url="/api/upload" accept="image/*"
                     :maxFileSize="1000000" @upload="onUpload" @select="onFileSelect(3)"
                     class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm">

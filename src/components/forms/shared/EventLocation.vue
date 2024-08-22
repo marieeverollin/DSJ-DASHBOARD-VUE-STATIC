@@ -4,8 +4,9 @@
             <h3 class="text-lg text-dsj-grey3">Event Location</h3>
         </div>
 
-        <div class="flex gap-x-5">
-            <div class="flex flex-1 w-6/12 flex-col gap-y-5 p-5 pr-0">
+        <div class="flex flex-col xl:flex-row gap-5">
+
+            <div class="flex flex-1 w-full xl:w-6/12 flex-col gap-y-5 p-5 xl:pr-0">
                 <div class="input-group flex items-center gap-x-5">
                     <label for="address" class="text-dsj-grey4 w-4/12"> Address </label>
 
@@ -44,8 +45,8 @@
                 </div>
             </div>
 
-            <div class="flex-1 w-6/12 p-5">
-                <div class="rounded-md bg-dsj-grey1 w-full h-full">
+            <div class="flex-1 w-full xl:w-6/12 p-5">
+                <div class="rounded-md bg-dsj-grey1 w-full h-full min-h-20">
                     <!-- <GoogleMap :center="{ lat: 40.7128, lng: -74.0060 }" :zoom="10" style="width: 100%; height: 400px;">
                         <GoogleMapMarker :position="{ lat: 40.7128, lng: -74.0060 }" />
                     </GoogleMap> -->

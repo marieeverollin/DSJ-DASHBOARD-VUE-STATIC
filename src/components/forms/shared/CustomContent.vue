@@ -4,7 +4,7 @@
             <h3 class="text-lg text-dsj-grey3">Add Custom Content</h3>
         </div>
 
-        <div class="flex gap-x-5 p-5">
+        <div class="flex md:gap-5 p-5 flex-wrap gap-2.5">
             <Button label="Full Image" icon="pi pi-plus" @click="addComponent('FullImage')" severity="secondary"
                 class="items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm" />
 

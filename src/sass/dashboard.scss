@@ -18,6 +18,7 @@ $input-background: transparent;
         opacity: 1;
         transform: translateY(0);
     }
+
     .sticky-active {
         opacity: 1;
         transform: translateY(0);
@@ -171,10 +172,12 @@ $input-background: transparent;
 .filterbar {
     .p-button {
         padding-left: 16px;
+
         .p-button-icon::before {
             font-size: 16px;
         }
     }
+
     .date-picker,
     .az-filter,
     .tag-filter,
@@ -212,6 +215,7 @@ $input-background: transparent;
 .filters-mobile {
     .p-button {
         padding-left: 16px;
+
         .p-button-icon::before {
             font-size: 16px;
         }
@@ -223,6 +227,7 @@ $input-background: transparent;
     flex: 1;
     max-width: 32%;
     aspect-ratio: 1/1;
+
     .event-buttons {
         .p-button .p-button-icon {
             display: flex;
@@ -234,6 +239,7 @@ $input-background: transparent;
                 font-size: $small-font-size;
             }
         }
+
         a:has(.pi) {
             font-weight: 300;
 
@@ -260,6 +266,10 @@ $input-background: transparent;
         max-width: 50%;
         flex: 1 0 48%;
     }
+
+    .p-fileupload span:not(.p-button span) {
+        font-size: 10px;
+    }
 }
 
 @media screen and (max-width: 1120px) {
@@ -274,6 +284,82 @@ $input-background: transparent;
         aspect-ratio: auto;
         flex: 1;
     }
+
+    .event-information {
+        label {
+            width: 100%;
+        }
+
+        .input-group {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 10px;
+        }
+    }
+
+    .event-dates {
+        label {
+            width: 100%;
+        }
+
+        .input-group {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 10px;
+
+            .p-datepicker {
+                width: 100%;
+            }
+                    .p-select {
+            width: 100%;
+        }
+        }
+    }
+
+    .event-location {
+        label {
+            width: 100%;
+        }
+
+        .input-group {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 10px;
+        }
+
+        .p-inputtext {
+            width: 100%;
+        }
+
+        .p-select {
+            width: 100%;
+        }
+    }
+
+        .event-details {
+        label {
+            width: 100%;
+        }
+
+        .input-group {
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 10px;
+        }
+
+        .p-inputtext {
+            width: 100%;
+        }
+
+        .p-select {
+            width: 100%;
+        }
+
+                .p-multiselect {
+            width: 100%;
+        }
+    }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -292,5 +378,16 @@ $input-background: transparent;
         right: 0;
         margin: auto;
     }
-    
+
+}
+
+@media screen and (max-width: 500px) {
+    .dashboard-container .sidebar {
+        border-right: 0px;
+    }
+
+    .p-datepicker-panel {
+        right: 0;
+        margin: auto;
+    }
 }

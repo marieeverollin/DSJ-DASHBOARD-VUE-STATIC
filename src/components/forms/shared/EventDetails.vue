@@ -4,8 +4,9 @@
             <h3 class="text-lg text-dsj-grey3">Event Details</h3>
         </div>
 
-        <div class="flex flex-wrap gap-x-5">
-            <div class="flex flex-1 w-6/12 flex-col gap-y-4 p-5">
+        <div class="flex flex-col xl:flex-row xl:flex-wrap xl:gap-5">
+
+            <div class="flex flex-1 w-full xl:w-6/12 flex-col gap-y-4 p-5 pb-0 xl:pb-5">
                 <div class="input-group flex items-center gap-x-6">
                     <label for="website" class="text-dsj-grey4 w-4/12"> Website </label>
                     <InputText type="text" v-model="website"
@@ -13,16 +14,16 @@
                 </div>
 
                 <div class="input-group flex items-center gap-x-6">
-                    <label for="contactName" class="text-dsj-grey4 w-4/12"> Contact Name </label>
-                    <InputText type="text" v-model="contactName"
+                    <label for="email" class="text-dsj-grey4 w-4/12"> E-Mail </label>
+                    <InputText type="email" v-model="email"
                         class="rounded-md gap-x-2 text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-8/12" />
                 </div>
             </div>
 
-            <div class="flex flex-1 w-6/12 flex-col gap-y-4 p-5">
+            <div class="flex flex-1 w-full xl:w-6/12 flex-col gap-y-4 p-5">
                 <div class="input-group flex items-center gap-x-6">
-                    <label for="email" class="text-dsj-grey4 w-4/12"> E-Mail </label>
-                    <InputText type="email" v-model="email"
+                    <label for="contactName" class="text-dsj-grey4 w-4/12"> Contact Name </label>
+                    <InputText type="text" v-model="contactName"
                         class="rounded-md gap-x-2 text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-8/12" />
                 </div>
 
@@ -38,8 +39,9 @@
             <Divider class="border border-dsj-grey1" />
         </div>
 
-        <div class="flex flex-wrap gap-x-5">
-            <div class="flex flex-1 w-6/12 flex-col gap-y-4 p-5">
+        <div class="flex flex-col xl:flex-row xl:flex-wrap xl:gap-5">
+
+            <div class="flex flex-1 w-full xl:w-6/12 flex-col gap-y-4 p-5 pb-0 xl:pb-5">
                 <div class="input-group flex items-center gap-x-6">
                     <label for="category" class="text-dsj-grey4 w-4/12"> Category </label>
                     <MultiSelect v-model="selectedCategories" :options="categories" optionLabel="name" filter
@@ -48,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-1 w-6/12 flex-col gap-y-4 p-5">
+            <div class="flex flex-1 w-full xl:w-6/12 flex-col gap-y-4 p-5">
                 <div class="input-group flex items-center gap-x-6">
                     <label for="area" class="text-dsj-grey4 w-4/12"> Area </label>
                     <MultiSelect v-model="selectedAreas" :options="areas" optionLabel="name" filter placeholder="Select"
