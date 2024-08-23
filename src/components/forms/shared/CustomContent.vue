@@ -5,21 +5,11 @@
         </div>
 
         <div class="flex md:gap-5 p-5 flex-wrap gap-2.5">
-            <Button label="Full Image" icon="pi pi-plus" @click="addComponent('FullImage')" severity="secondary"
-                class="items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm" />
-
-            <Button label="Paragraph Text" icon="pi pi-plus" @click="addComponent('ParagraphText')" severity="secondary"
-                class="items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm" />
-
-            <Button label="3 Image Combo" icon="pi pi-plus" @click="addComponent('ThreeImageCombo')"
-                severity="secondary"
-                class="items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm" />
-
-            <Button label="Basic Slider" icon="pi pi-plus" @click="addComponent('BasicSlider')" severity="secondary"
-                class="items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm" />
-
-            <Button label="Video" icon="pi pi-plus" @click="addComponent('Video')" severity="secondary"
-                class="items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm" />
+            <Button label="Full Image" icon="pi pi-plus" @click="addComponent('FullImage')" severity="secondary" class="items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm" />
+            <Button label="Paragraph Text" icon="pi pi-plus" @click="addComponent('ParagraphText')" severity="secondary" class="items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm" />
+            <Button label="3 Image Combo" icon="pi pi-plus" @click="addComponent('ThreeImageCombo')" severity="secondary" class="items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm" />
+            <Button label="Basic Slider" icon="pi pi-plus" @click="addComponent('BasicSlider')" severity="secondary" class="items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm" />
+            <Button label="Video" icon="pi pi-plus" @click="addComponent('Video')" severity="secondary" class="items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm" />
         </div>
 
         <div class="custom-section flex flex-col gap-y-5">

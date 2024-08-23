@@ -1,6 +1,5 @@
 <template>
-    <div
-        class="single-event flex flex-col justify-between gap-y-4 border transition-all border-dsj-grey2 hover:border-dsj-yellow p-3 md:p-4 rounded-xl aspect-square w-1/3">
+    <div class="single-event flex flex-col justify-between gap-y-4 border transition-all border-dsj-grey2 hover:border-dsj-yellow p-3 md:p-4 rounded-xl aspect-square w-1/3">
 
         <div class="flex flex-col">
             <div class="flex flex-col gap-y-4">
@@ -12,7 +11,6 @@
                     </div>
                     <EventTag :status="event.status" />
                 </div>
-
                 <p class="event-title text-dsj-grey3 text-lg">{{ event.title }}</p>
             </div>
 

@@ -1,8 +1,8 @@
 <template>
     <div class="dashboard-container w-full relative flex flex-col md:flex-row bg-white rounded-2xl shadow-sm">
+       
         <!-- Sidebar -->
-        <SidebarDashboard :filters="eventFilters" :selectedFilter="selectedFilter" @update:filter="selectFilter"
-            @sortOrder="sortEvents" @update:date="filterByDate" />
+        <SidebarDashboard :filters="eventFilters" :selectedFilter="selectedFilter" @update:filter="selectFilter" @sortOrder="sortEvents" @update:date="filterByDate" />
 
         <!-- Main Content -->
         <div class="main-content flex flex-col md:w-full gap-y-5 p-4 lg:p-12">
@@ -10,7 +10,6 @@
                 <h2 class="filterSelected text-xl uppercase w-max text-dsj-yellow font-normal">{{ selectedFilter }}</h2>
                 <Filters @sortOrder="sortEvents" @update:date="filterByDate" />
             </div>
-
             <EventsGroup :events="filteredAndSortedEvents" :selectedFilter="selectedFilter" />
         </div>
     </div>

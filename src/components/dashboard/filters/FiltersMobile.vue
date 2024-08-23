@@ -1,7 +1,6 @@
 <template>
     <!-- Filterbar Mobile -->
-    <div
-        class="filterbar filters-mobile md:hidden flex md:flex-row flex-col-reverse items-center justify-center md:justify-between gap-2 flex-wrap">
+    <div class="filterbar filters-mobile md:hidden flex md:flex-row flex-col-reverse items-center justify-center md:justify-between gap-2 flex-wrap">
         <div class="flex gap-2">
             <Calendar @update:date="filterByDate" />
             <Sort @sortOrder="handleSortOrder" />

@@ -5,7 +5,6 @@
         </div>
 
         <div class="flex flex-col xl:flex-row gap-5">
-
             <div class="flex flex-1 w-full xl:w-6/12 flex-col gap-y-5 p-5 xl:pr-0">
                 <div class="input-group flex items-center gap-x-5">
                     <label for="address" class="text-dsj-grey4 w-4/12"> Address </label>
@@ -14,34 +13,27 @@
                         v-on:placechanged="getAddressData" country="ca" class="rounded-md gap-x-2 text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-8/12">
                     </vue-google-autocomplete> -->
 
-                    <InputText type="text" v-model="address" placeholder="Search Places"
-                        class="rounded-md gap-x-2 text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-8/12" />
+                    <InputText type="text" v-model="address" placeholder="Search Places" class="rounded-md gap-x-2 text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-8/12" />
                 </div>
 
                 <div class="input-group flex items-center gap-x-5">
-                    <label for="locationName" class="text-dsj-grey4 w-4/12"> Name of the location <br>(Arena, Hall,
-                        etc.)
-                    </label>
-                    <InputText type="text" v-model="locationName"
-                        class="rounded-md gap-x-2 text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-8/12" />
+                    <label for="locationName" class="text-dsj-grey4 w-4/12"> Name of the location <br>(Arena, Hall, etc.) </label>
+                    <InputText type="text" v-model="locationName" class="rounded-md gap-x-2 text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-8/12" />
                 </div>
 
                 <div class="input-group flex items-center gap-x-5">
                     <label for="city" class="text-dsj-grey4 w-4/12"> City </label>
-                    <InputText type="text" v-model="city"
-                        class="rounded-md gap-x-2 text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-8/12" />
+                    <InputText type="text" v-model="city" class="rounded-md gap-x-2 text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-8/12" />
                 </div>
 
                 <div class="input-group flex items-center gap-x-5">
                     <label for="postalCode" class="text-dsj-grey4 w-4/12"> Postal Code </label>
-                    <InputText type="text" v-model="postalCode"
-                        class="rounded-md gap-x-2 text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-8/12" />
+                    <InputText type="text" v-model="postalCode" class="rounded-md gap-x-2 text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-8/12" />
                 </div>
 
                 <div class="input-group flex items-center gap-x-5">
                     <label for="province" class="text-dsj-grey4 w-4/12"> Province </label>
-                    <Select v-model="selectedProvince" :options="provinces" optionLabel="name" placeholder="Select"
-                        class="rounded-md text-dsj-grey3 border border-dsj-grey2 shadow-none w-8/12" />
+                    <Select v-model="selectedProvince" :options="provinces" optionLabel="name" placeholder="Select" class="rounded-md text-dsj-grey3 border border-dsj-grey2 shadow-none w-8/12" />
                 </div>
             </div>
 

@@ -1,6 +1,5 @@
 <template>
-    <Button label="Delete" icon="pi pi-times" @click="handleDelete" severity="secondary"
-        class="btn-sm-delete items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2 py-1 md:p-2 rounded-md text-xs uppercase h-fit" />
+    <Button label="Delete" icon="pi pi-times" @click="handleDelete" severity="secondary" class="btn-sm-delete items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2 py-1 md:p-2 rounded-md text-xs uppercase h-fit" />
 </template>
 
 <script>
