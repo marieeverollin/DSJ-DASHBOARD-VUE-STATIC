@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
 export const initSticky = () => {
+
     const updateStickySidebar = () => {
         const sidebar = $('.sidebar-content');
         const sidebarContainer = $('.sidebar');
@@ -37,10 +38,22 @@ export const initSticky = () => {
                 'width': 'auto'
             });
         }
+
+        const topLinks = $('.top-links');
+        if (windowWidth <= 768) {
+            if (scrollPosition > 20) {
+                topLinks.addClass('fixed').removeClass('relative');
+            } else {
+                topLinks.addClass('relative').removeClass('fixed');
+            }
+        } else {
+            topLinks.addClass('relative').removeClass('fixed');
+        }
     };
 
     $(window).on('scroll resize', updateStickySidebar);
     $(window).on('load', updateStickySidebar);
+
 };
 
 export default initSticky;

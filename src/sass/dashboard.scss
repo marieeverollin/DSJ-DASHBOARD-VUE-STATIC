@@ -31,6 +31,31 @@ $input-background: transparent;
     border-top: 1px solid $dsj-grey2;
 }
 
+.top-links {
+    z-index: 1000;
+    transition: border-bottom 0.5s ease-in-out;
+  &.relative {
+    position: relative;
+    padding-top: 0px;
+    border-bottom: 1px solid $white;
+  }
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 83.333333%;
+    padding-top: 20px;
+    height: 200px;
+    border-bottom: 1px solid $dsj-grey2;
+  }
+}
+
+.dashboard-container:has(.top-links.fixed) .main-content {
+    padding-top: 190px;
+}
+
 /* ----------------------------------------- */
 
 /* Components PrimeVue */
