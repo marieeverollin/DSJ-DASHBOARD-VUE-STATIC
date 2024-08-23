@@ -85,7 +85,6 @@ $input-background: transparent;
 }
 
 .p-button {
-
     .p-button-icon::before,
     .p-button.add-date .p-button-icon::before,
     .p-button.delete-date .p-button-icon::before {
@@ -414,6 +413,14 @@ $input-background: transparent;
     .p-datepicker-panel {
         right: 0;
         margin: auto;
+    }
+
+    .event-custom,
+    .event-information {
+        .p-button {
+            padding: 6px 8px;
+            border-radius: 6px;
+        }
     }
 
 }

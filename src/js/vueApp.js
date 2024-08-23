@@ -34,6 +34,7 @@ import BasicSlider from '../components/forms/shared/custom/BasicSlider.vue';
 import Calendar from '../components/dashboard/filters/filterbar/Calendar.vue';
 import CustomContent from '../components/forms/shared/CustomContent.vue';
 import Dashboard from '../components/dashboard/dashboard.vue';
+import DeleteButton from '../components/forms/shared/custom/shared/DeleteButton.vue';
 import EventButtons from '../components/dashboard/events/EventButtons.vue';
 import EventDates from '../components/forms/shared/EventDates.vue';
 import EventDetails from '../components/forms/shared/EventDetails.vue';
@@ -123,6 +124,7 @@ export const vueApp = () => {
     appSetup.component('BasicSlider', BasicSlider);
     appSetup.component('Calendar', Calendar);
     appSetup.component('CustomContent', CustomContent);
+    appSetup.component('DeleteButton', DeleteButton);
     appSetup.component('EventButtons', EventButtons);
     appSetup.component('EventDates', EventDates);
     appSetup.component('EventDetails', EventDetails);
