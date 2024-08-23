@@ -4,12 +4,7 @@
         <div class="sidebar-content top-0 left-0 right-0">
             <div class="flex flex-col gap-y-4 p-4 lg:px-5 lg:py-12 z-10">
 
-                <div class="sidebar-header flex gap-4 flex-col-reverse justify-between gap-x-4w w-full">
-
-                    <div class="sidebar-logo w-full flex items-center justify-center md:mb-2">
-                        <img src="../../../../images/logos/dsj_logo.png" alt="Logo" class="w-24 md:w-36 h-fit">
-                    </div>
-                </div>
+            <SidebarLogo />
 
                 <router-link to="/dashboard"
                     class="btn-add-event min-w-36 hidden md:flex items-center gap-x-2 text-dsj-grey3 transition-all border border-dsj-grey2 hover:bg-dsj-yellow hover:text-white hover:border-dsj-yellow py-2.5 md:px-4 rounded-xl text-sm w-full"><svg
@@ -47,6 +42,8 @@
 </template>
 
 <script>
+import SidebarLogo from './shared/SidebarLogo.vue';
+
 export default {
     data() {
         return {

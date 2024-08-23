@@ -7,51 +7,60 @@ import 'primeicons/primeicons.css';
 // import { GoogleMap, Marker } from 'vue3-google-map';
 
 /* PrimeVue */
-import Checkbox from 'primevue/checkbox';
-import InputNumber from 'primevue/inputnumber';
-import FloatLabel from 'primevue/floatlabel';
 import Button from 'primevue/button';
+import Checkbox from 'primevue/checkbox';
 import DatePicker from 'primevue/datepicker';
 import Dialog from 'primevue/dialog';
-import Textarea from 'primevue/textarea';
-import Paginator from 'primevue/paginator';
 import Divider from 'primevue/divider';
-import InputIcon from 'primevue/inputicon';
-import InputText from 'primevue/inputtext';
+import Drawer from 'primevue/drawer';
+import FileUpload from 'primevue/fileupload';
+import FloatLabel from 'primevue/floatlabel';
+import IconField from 'primevue/iconfield';
 import InputGroup from 'primevue/inputgroup';
 import InputGroupAddon from 'primevue/inputgroupaddon';
-import IconField from 'primevue/iconfield';
+import InputIcon from 'primevue/inputicon';
+import InputNumber from 'primevue/inputnumber';
+import InputText from 'primevue/inputtext';
 import ListBox from 'primevue/listbox';
-import Select from 'primevue/select';
 import MultiSelect from 'primevue/multiselect';
-import FileUpload from 'primevue/fileupload';
-import Drawer from 'primevue/drawer';
+import Paginator from 'primevue/paginator';
+import Select from 'primevue/select';
+import Textarea from 'primevue/textarea';
 
 /* My Components */
-import Dashboard from '../components/dashboard/dashboard.vue';
-import Sidebar from '../components/sidebar/Sidebar.vue';
-import EventsGroup from '../components/dashboard/events/EventsGroup.vue';
-import EventSingle from '../components/dashboard/events/EventSingle.vue';
-import EventTag from '../components/dashboard/events/EventTag.vue';
-import EventButtons from '../components/dashboard/events/EventButtons.vue';
-import EventInformation from '../components/forms/shared/EventInformation.vue';
-import EventDates from '../components/forms/shared/EventDates.vue';
-import EventLocation from '../components/forms/shared/EventLocation.vue';
-import EventDetails from '../components/forms/shared/EventDetails.vue';
-import CustomContent from '../components/forms/shared/CustomContent.vue';
 import BasicSlider from '../components/forms/shared/custom/BasicSlider.vue';
+import Calendar from '../components/dashboard/filters/filterbar/Calendar.vue';
+import CustomContent from '../components/forms/shared/CustomContent.vue';
+import Dashboard from '../components/dashboard/dashboard.vue';
+import EventButtons from '../components/dashboard/events/EventButtons.vue';
+import EventDates from '../components/forms/shared/EventDates.vue';
+import EventDetails from '../components/forms/shared/EventDetails.vue';
+import EventInformation from '../components/forms/shared/EventInformation.vue';
+import EventLocation from '../components/forms/shared/EventLocation.vue';
+import EventSingle from '../components/dashboard/events/EventSingle.vue';
+import EventsGroup from '../components/dashboard/events/EventsGroup.vue';
+import EventTag from '../components/dashboard/events/EventTag.vue';
+import Filters from '../components/dashboard/filters/Filters.vue';
+import FiltersMobile from '../components/dashboard/filters/FiltersMobile.vue';
 import FullImage from '../components/forms/shared/custom/FullImage.vue';
 import ParagraphText from '../components/forms/shared/custom/ParagraphText.vue';
+import Searchbar from '../components/dashboard/filters/Searchbar.vue';
+import Sidebar from '../components/sidebar/Sidebar.vue';
+import SidebarAdd from '../components/sidebar/sidebars/SidebarAdd.vue';
+import SidebarDashboard from '../components/sidebar/sidebars/SidebarDashboard.vue';
+import SidebarEdit from '../components/sidebar/sidebars/SidebarEdit.vue';
+import SidebarLogo from '../components/sidebar/sidebars/shared/SidebarLogo.vue';
+import Sort from '../components/dashboard/filters/filterbar/Sort.vue';
+import Tag from '../components/dashboard/filters/filterbar/Tag.vue';
 import ThreeImageCombo from '../components/forms/shared/custom/ThreeImageCombo.vue';
 import Video from '../components/forms/shared/custom/Video.vue';
-import SidebarAdd from '../components/sidebar/sidebars/SidebarAdd.vue';
-import SidebarEdit from '../components/sidebar/sidebars/SidebarEdit.vue';
-import SidebarDashboard from '../components/sidebar/sidebars/SidebarDashboard.vue';
 
 
 export const vueApp = () => {
+
     const appSetup = createApp(App);
 
+    /* PRIMEVUE */
     appSetup.use(PrimeVue, {
         theme: {
             preset: Aura,
@@ -66,55 +75,65 @@ export const vueApp = () => {
         }
     });
 
+    /* ROUTER */
     appSetup.use(router);
 
+    /* GOOGLE */
     /*appSetup.use(GoogleMap, {
         load: {
             key: 'AIzaSyBfTsENPvt4dnfgQSxh-76CMzU3zf-BATw',
         },
     });
-
     appSetup.component('GoogleMap', GoogleMap.GoogleMap);
     appSetup.component('GoogleMapMarker', GoogleMap.Marker); */
 
-    appSetup.component('Checkbox', Checkbox);
-    appSetup.component('InputNumber', InputNumber);
-    appSetup.component('FloatLabel', FloatLabel);
+    /* PrimeVue Components */
     appSetup.component('Button', Button);
+    appSetup.component('Checkbox', Checkbox);
     appSetup.component('DatePicker', DatePicker);
     appSetup.component('Dialog', Dialog);
-    appSetup.component('Textarea', Textarea);
-    appSetup.component('Paginator', Paginator);
     appSetup.component('Divider', Divider);
-    appSetup.component('InputIcon', InputIcon);
-    appSetup.component('InputText', InputText);
+    appSetup.component('Drawer', Drawer);
+    appSetup.component('FileUpload', FileUpload);
+    appSetup.component('FloatLabel', FloatLabel);
+    appSetup.component('IconField', IconField);
     appSetup.component('InputGroup', InputGroup);
     appSetup.component('InputGroupAddon', InputGroupAddon);
+    appSetup.component('InputIcon', InputIcon);
+    appSetup.component('InputNumber', InputNumber);
+    appSetup.component('InputText', InputText);
     appSetup.component('ListBox', ListBox);
-    appSetup.component('IconField', IconField);
-    appSetup.component('Select', Select);
     appSetup.component('MultiSelect', MultiSelect);
-    appSetup.component('FileUpload', FileUpload);
-    appSetup.component('Drawer', Drawer);
+    appSetup.component('Paginator', Paginator);
+    appSetup.component('Select', Select);
+    appSetup.component('Textarea', Textarea);
 
-    appSetup.component('EventsGroup', EventsGroup);
+    /* My Components */
+    appSetup.component('BasicSlider', BasicSlider);
+    appSetup.component('Calendar', Calendar);
+    appSetup.component('CustomContent', CustomContent);
+    appSetup.component('EventButtons', EventButtons);
+    appSetup.component('EventDates', EventDates);
+    appSetup.component('EventDetails', EventDetails);
+    appSetup.component('EventInformation', EventInformation);
+    appSetup.component('EventLocation', EventLocation);
     appSetup.component('EventSingle', EventSingle);
     appSetup.component('EventTag', EventTag);
-    appSetup.component('EventButtons', EventButtons);
-    appSetup.component('EventInformation', EventInformation);
-    appSetup.component('EventDates', EventDates);
-    appSetup.component('EventLocation', EventLocation);
-    appSetup.component('EventDetails', EventDetails);
-    appSetup.component('CustomContent', CustomContent);
-    appSetup.component('BasicSlider', BasicSlider);
+    appSetup.component('EventsGroup', EventsGroup);
+    appSetup.component('Filters', Filters);
+    appSetup.component('FiltersMobile', FiltersMobile);
     appSetup.component('FullImage', FullImage);
     appSetup.component('ParagraphText', ParagraphText);
-    appSetup.component('ThreeImageCombo', ThreeImageCombo);
-    appSetup.component('Video', Video);
+    appSetup.component('Searchbar', Searchbar);
     appSetup.component('Sidebar', Sidebar);
     appSetup.component('SidebarAdd', SidebarAdd);
-    appSetup.component('SidebarEdit', SidebarEdit);
     appSetup.component('SidebarDashboard', SidebarDashboard);
+    appSetup.component('SidebarEdit', SidebarEdit);
+    appSetup.component('SidebarLogo', SidebarLogo);
+    appSetup.component('Sort', Sort);
+    appSetup.component('Tag', Tag);
+    appSetup.component('ThreeImageCombo', ThreeImageCombo);
+    appSetup.component('Video', Video);
 
     appSetup.mount('#app');
 }
