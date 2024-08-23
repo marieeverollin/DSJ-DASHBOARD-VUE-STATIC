@@ -5,8 +5,9 @@
         <i class="pi pi-plus"></i>Add Event
     </router-link>
     <div class="filters-desktop filterbar hidden md:w-full lg:w-fit md:flex md:justify-between lg:justify-end gap-2">
+
         <div class='flex gap-x-2'>
-            <Calendar />
+            <Calendar @update:date="filterByDate" />
             <Sort @sortOrder="handleSortOrder" />
         </div>
         <Searchbar />

@@ -2,16 +2,16 @@
     <div class="dashboard-container w-full relative flex flex-col md:flex-row bg-white rounded-2xl shadow-sm">
         <!-- Sidebar -->
         <SidebarDashboard :filters="eventFilters" :selectedFilter="selectedFilter" @update:filter="selectFilter"
-            @sortOrder="sortEvents" />
+            @sortOrder="sortEvents" @update:date="filterByDate" />
 
         <!-- Main Content -->
         <div class="main-content flex flex-col md:w-full gap-y-5 p-4 lg:p-12">
             <div class="filter-row flex md:flex-col lg:flex-row w-full items-center justify-between gap-4">
                 <h2 class="filterSelected text-xl uppercase w-max text-dsj-yellow font-normal">{{ selectedFilter }}</h2>
-                <Filters @sortOrder="sortEvents" />
+                <Filters @sortOrder="sortEvents" @update:date="filterByDate" />
             </div>
 
-            <EventsGroup :events="sortedEvents" :selectedFilter="selectedFilter" />
+            <EventsGroup :events="filteredAndSortedEvents" :selectedFilter="selectedFilter" />
         </div>
     </div>
 </template>
@@ -121,11 +121,21 @@ export default {
                 },
             ],
             sortOrder: 'recentToOldest',
+            filterDate: null,
         };
     },
     computed: {
-        sortedEvents() {
-            return [...this.events].sort((a, b) => {
+        filteredAndSortedEvents() {
+            let filteredEvents = this.events;
+
+            if (this.filterDate) {
+                filteredEvents = filteredEvents.filter(event => {
+                    const eventDate = new Date(event.date.fullDate);
+                    return eventDate.toDateString() === new Date(this.filterDate).toDateString();
+                });
+            }
+
+            return filteredEvents.sort((a, b) => {
                 if (this.sortOrder === 'ascTitle') {
                     return a.title.localeCompare(b.title);
                 } else if (this.sortOrder === 'descTitle') {
@@ -138,14 +148,17 @@ export default {
                 return 0;
             });
         }
-    }, 
+    },
     methods: {
         selectFilter(event) {
             this.selectedFilter = event;
         },
         sortEvents(order) {
             this.sortOrder = order;
-        }
+        },
+        filterByDate(date) {
+            this.filterDate = date;
+        },
     }
 };
 </script>

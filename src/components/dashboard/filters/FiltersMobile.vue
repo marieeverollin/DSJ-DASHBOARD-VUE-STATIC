@@ -3,7 +3,7 @@
     <div
         class="filterbar filters-mobile md:hidden flex md:flex-row flex-col-reverse items-center justify-center md:justify-between gap-2 flex-wrap">
         <div class="flex gap-2">
-            <Calendar />
+            <Calendar @update:date="filterByDate" />
             <Sort @sortOrder="handleSortOrder" />
             <Tag :filters="filters" :selectedFilter="selectedFilter" @update:filter="selectFilter" />
         </div>
@@ -24,7 +24,10 @@ export default {
         },
         handleSortOrder(order) {
             this.$emit('sortOrder', order);
-        }
+        },
+        filterByDate(date) {
+            this.$emit('update:date', date);
+        },
     }
 };
 </script>

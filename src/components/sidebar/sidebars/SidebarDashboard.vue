@@ -23,7 +23,7 @@
     <div class="top-links md:hidden flex flex-col gap-5 p-4 relative bg-white rounded-t-xl">
         <SidebarLogo />
         <FiltersMobile :filters="filters" :selectedFilter="selectedFilter" @update:filter="selectFilter"
-            @sortOrder="$emit('sortOrder', $event)" />
+            @update:date="sendDateToDashboard" @sortOrder="sortEvents" />
     </div>
 </template>
 
@@ -42,9 +42,13 @@ export default {
     methods: {
         selectFilter(filter) {
             this.$emit('update:filter', filter);
+        },
+        sendDateToDashboard(date) {
+            this.$emit('update:date', date);
+        },
+        sortEvents(order) {
+            this.$emit('sortOrder', order);
         }
     }
 };
-</script>
-
-<style scoped></style>
+</script
