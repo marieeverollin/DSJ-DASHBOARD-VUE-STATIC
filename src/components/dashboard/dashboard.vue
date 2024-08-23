@@ -1,18 +1,17 @@
 <template>
     <div class="dashboard-container w-full relative flex flex-col md:flex-row bg-white rounded-2xl shadow-sm">
-
         <!-- Sidebar -->
-        <Sidebar :filters="eventFilters" :selectedFilter="selectedFilter" @update:filter="selectFilter" />
+        <SidebarDashboard :filters="eventFilters" :selectedFilter="selectedFilter" @update:filter="selectFilter"
+            @sortOrder="sortEvents" />
 
         <!-- Main Content -->
         <div class="main-content flex flex-col md:w-full gap-y-5 p-4 lg:p-12">
             <div class="filter-row flex md:flex-col lg:flex-row w-full items-center justify-between gap-4">
-                <h2 class="filterSelected text-xl uppercase w-max  text-dsj-yellow font-normal">{{ selectedFilter }} </h2>
-                <Filters />
+                <h2 class="filterSelected text-xl uppercase w-max text-dsj-yellow font-normal">{{ selectedFilter }}</h2>
+                <Filters @sortOrder="sortEvents" />
             </div>
 
-            <EventsGroup :events="events" :selectedFilter="selectedFilter" />
-
+            <EventsGroup :events="sortedEvents" :selectedFilter="selectedFilter" />
         </div>
     </div>
 </template>
@@ -30,7 +29,7 @@ export default {
                         day: '10th',
                         month: 'September',
                         year: 2024,
-                        fullDate: 'September 10th 2024'
+                        fullDate: 'September 10 2024'
                     },
                     time: {
                         from: '10:30:00 am',
@@ -49,7 +48,7 @@ export default {
                         day: '5th',
                         month: 'August',
                         year: 2024,
-                        fullDate: 'August 5th 2024'
+                        fullDate: 'August 5 2024'
                     },
                     time: {
                         from: ' 2:00:00 pm',
@@ -68,7 +67,7 @@ export default {
                         day: '5th',
                         month: 'August',
                         year: 2024,
-                        fullDate: 'August 5th 2024'
+                        fullDate: 'August 5 2024'
                     },
                     time: {
                         from: ' 2:00:00 pm',
@@ -87,7 +86,7 @@ export default {
                         day: '25th',
                         month: 'July',
                         year: 2024,
-                        fullDate: 'July 25th 2024'
+                        fullDate: 'July 25 2024'
                     },
                     time: {
                         from: ' 2:00:00 pm',
@@ -107,7 +106,7 @@ export default {
                         day: '5th',
                         month: 'July',
                         year: 2024,
-                        fullDate: 'July 5th 2024'
+                        fullDate: 'July 5 2024'
                     },
                     time: {
                         from: ' 2:00:00 pm',
@@ -120,14 +119,32 @@ export default {
                         type: 'Five & Dime'
                     }
                 },
-            ]
+            ],
+            sortOrder: 'recentToOldest',
         };
     },
+    computed: {
+        sortedEvents() {
+            return [...this.events].sort((a, b) => {
+                if (this.sortOrder === 'ascTitle') {
+                    return a.title.localeCompare(b.title);
+                } else if (this.sortOrder === 'descTitle') {
+                    return b.title.localeCompare(a.title);
+                } else if (this.sortOrder === 'recentToOldest') {
+                    return new Date(b.date.fullDate) - new Date(a.date.fullDate);
+                } else if (this.sortOrder === 'oldestToRecent') {
+                    return new Date(a.date.fullDate) - new Date(b.date.fullDate);
+                }
+                return 0;
+            });
+        }
+    }, 
     methods: {
         selectFilter(event) {
             this.selectedFilter = event;
-            console.log('Selected Filter:', event);
-            this.selectedFilter = event;
+        },
+        sortEvents(order) {
+            this.sortOrder = order;
         }
     }
 };
