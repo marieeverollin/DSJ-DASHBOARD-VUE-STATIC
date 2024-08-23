@@ -28,6 +28,8 @@ import Select from 'primevue/select';
 import Textarea from 'primevue/textarea';
 
 /* My Components */
+import ArrowDown from '../components/forms/shared/custom/shared/ArrowDown.vue';
+import ArrowUp from '../components/forms/shared/custom/shared/ArrowUp.vue';
 import BasicSlider from '../components/forms/shared/custom/BasicSlider.vue';
 import Calendar from '../components/dashboard/filters/filterbar/Calendar.vue';
 import CustomContent from '../components/forms/shared/CustomContent.vue';
@@ -116,6 +118,8 @@ export const vueApp = () => {
     appSetup.component('Textarea', Textarea);
 
     /* My Components */
+    appSetup.component('ArrowDown', ArrowDown);
+    appSetup.component('ArrowUp', ArrowUp);
     appSetup.component('BasicSlider', BasicSlider);
     appSetup.component('Calendar', Calendar);
     appSetup.component('CustomContent', CustomContent);

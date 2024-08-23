@@ -6,11 +6,8 @@
             <div class="flex gap-x-3 items-center justify-between flex-row-reverse md:flex-row">
 
                 <div class="flex gap-x-3 items-center">
-                    <Button icon="pi pi-angle-up" severity="secondary"
-                        class="btn-sm-arrow items-center justify-center bg-dsj-yellow text-white p-2 rounded-md text-xs uppercase h-fit w-8" />
-
-                    <Button icon="pi pi-angle-down" severity="secondary"
-                        class="btn-sm-arrow items-center justify-center bg-dsj-yellow text-white p-2 rounded-md text-xs uppercase h-fit w-8" />
+                    <ArrowUp />
+                    <ArrowDown />
                 </div>
 
                 <Button label="Delete" icon="pi pi-times" @click="$emit('deleteComponent', index)" severity="secondary"
@@ -32,6 +29,8 @@
 </template>
 
 <script>
+import ArrowUp from './shared/ArrowUp.vue';
+
 export default {
     props: ['index'],
     data() {
