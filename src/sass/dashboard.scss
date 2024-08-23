@@ -1,4 +1,5 @@
 /* Variables */
+$dsj-grey2: #E3E3E3;
 $dsj-grey3: #A0A0A0;
 $dsj-grey4: #545454;
 $dsj-yellow: #FEC100;
@@ -23,6 +24,11 @@ $input-background: transparent;
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.bottom-links {
+    width: 83.333333%;
+    border-top: 1px solid $dsj-grey2;
 }
 
 /* ----------------------------------------- */

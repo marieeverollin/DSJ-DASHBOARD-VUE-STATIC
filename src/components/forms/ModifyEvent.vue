@@ -5,8 +5,9 @@
         <Sidebar />
 
         <!-- Main Content -->
-        <div class="main-content flex flex-col w-full gap-y-5 p-4 lg:p-12">
-            <h2 class="filterSelected text-xl uppercase text-dsj-yellow font-normal text-center md:text-left">Modify Event</h2>
+        <div class="main-content flex flex-col w-full gap-y-5 p-4 pb-80 md:pb-4 lg:p-12">
+            <h2 class="filterSelected text-xl uppercase text-dsj-yellow font-normal text-center md:text-left">Modify
+                Event</h2>
             <EventInformation />
             <EventDates />
             <EventLocation />
@@ -15,7 +16,8 @@
         </div>
 
         <!-- Sidebar Content Mobile Only -->
-        <div class="bottom-links flex flex-wrap gap-y-5 p-5 md:hidden">
+        <div
+            class="bottom-links flex flex-col gap-y-5 p-5 fixed bottom-0 left-0 right-0 m-auto shadow-sm bg-white md:hidden">
             <router-link to="/dashboard"
                 class="btn-add-event min-w-36 flex items-center gap-x-2 text-dsj-grey3 transition-all border border-dsj-grey2 hover:bg-dsj-yellow hover:text-white hover:border-dsj-yellow py-2.5 px-4 rounded-xl text-sm w-full"><svg
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3.5">
