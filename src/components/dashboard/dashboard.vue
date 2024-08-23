@@ -118,6 +118,25 @@ export default {
                         type: 'Five & Dime'
                     }
                 },
+                {
+                    id: 6,
+                    date: {
+                        day: '5th',
+                        month: 'October',
+                        year: 2024,
+                        fullDate: 'October 5 2024'
+                    },
+                    time: {
+                        from: ' 2:00:00 pm',
+                        to: ' 5:00:00 pm'
+                    },
+                    status: 'upcoming',
+                    title: 'Twice! Ryan Naismith LIVE at the Five & Dime',
+                    location: {
+                        address: '40 Grannan Street',
+                        type: 'Five & Dime'
+                    }
+                },
             ],
             sortOrder: 'recentToOldest',
             filterDate: null,
