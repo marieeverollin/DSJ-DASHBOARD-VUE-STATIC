@@ -1,12 +1,9 @@
 <template>
     <div class="flex flex-col lg:flex-row lg:flex-wrap gap-6">
-        <EventSingle v-for="(event, index) in paginatedEvents" :key="event.id" :event="event" :index="index + first"
-            @delete-event="removeEvent(event.id)" />
+        <EventSingle v-for="(event, index) in paginatedEvents" :key="event.id" :event="event" :index="index + first" @delete-event="removeEvent(event.id)" />
     </div>
 
-    <Paginator v-model:first="first" :rows="rowsPerPage" :totalRecords="totalRecords"
-        template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
-        currentPageReportTemplate="{currentPage}" class="text-xs" />
+    <Paginator v-model:first="first" :rows="rowsPerPage" :totalRecords="totalRecords" template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink" currentPageReportTemplate="{currentPage}" class="text-xs" />
 </template>
 
 <script>
@@ -21,7 +18,7 @@ export default {
     data() {
         return {
             first: 0,
-            rowsPerPage: 3,
+            rowsPerPage: 12,
         };
     },
     computed: {

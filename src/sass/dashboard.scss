@@ -224,7 +224,7 @@ $input-background: transparent;
 
 /* Single Event */
 .single-event {
-    flex: 1;
+    flex: 1 0 30%;
     max-width: 32%;
     aspect-ratio: 1/1;
 
@@ -287,7 +287,8 @@ $input-background: transparent;
     .single-event {
         max-width: 100%;
         aspect-ratio: auto;
-        flex: 1;
+        flex: none;
+        width: 100%;
     }
 
     .event-information {
