@@ -6,7 +6,7 @@
 
         <!-- Main Content -->
         <div class="main-content flex flex-col w-full gap-y-5 p-4 lg:p-12">
-            <h2 class="filterSelected text-xl uppercase text-dsj-yellow font-normal">Add New Event</h2>
+            <h2 class="filterSelected text-xl uppercase text-dsj-yellow font-normal text-center md:text-left">Add New Event</h2>
             <EventInformation />
             <EventDates />
             <EventLocation />

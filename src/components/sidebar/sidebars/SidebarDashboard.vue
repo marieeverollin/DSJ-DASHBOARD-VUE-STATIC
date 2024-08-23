@@ -7,7 +7,7 @@
                 <SidebarLogo />
 
                 <FiltersMobile :filters="filters" :selectedFilter="selectedFilter" @update:filter="selectFilter" />
-
+                
                 <router-link to="/events/add"
                     class="btn-add-event hidden md:flex items-center justify-center gap-x-2 bg-dsj-yellow text-white py-2.5 rounded-xl text-sm w-full min-w-36 mb-6"><i
                         class="pi pi-plus"></i>Add Event</router-link>

@@ -42,8 +42,13 @@ import EventsGroup from '../components/dashboard/events/EventsGroup.vue';
 import EventTag from '../components/dashboard/events/EventTag.vue';
 import Filters from '../components/dashboard/filters/Filters.vue';
 import FiltersMobile from '../components/dashboard/filters/FiltersMobile.vue';
+import FrenchButton from '../components/sidebar/sidebars/shared/FrenchButton.vue';
 import FullImage from '../components/forms/shared/custom/FullImage.vue';
 import ParagraphText from '../components/forms/shared/custom/ParagraphText.vue';
+import Published from '../components/sidebar/sidebars/shared/Published.vue';
+import ReturnButton from '../components/sidebar/sidebars/shared/ReturnButton.vue';
+import SaveChangesButton from '../components/sidebar/sidebars/shared/SaveChangesButton.vue';
+import SaveNewEventButton from '../components/sidebar/sidebars/shared/SaveNewEventButton.vue';
 import Searchbar from '../components/dashboard/filters/Searchbar.vue';
 import Sidebar from '../components/sidebar/Sidebar.vue';
 import SidebarAdd from '../components/sidebar/sidebars/SidebarAdd.vue';
@@ -54,6 +59,8 @@ import Sort from '../components/dashboard/filters/filterbar/Sort.vue';
 import Tag from '../components/dashboard/filters/filterbar/Tag.vue';
 import ThreeImageCombo from '../components/forms/shared/custom/ThreeImageCombo.vue';
 import Video from '../components/forms/shared/custom/Video.vue';
+import ViewEventButton from '../components/sidebar/sidebars/shared/ViewEventButton.vue';
+
 
 
 export const vueApp = () => {
@@ -122,18 +129,24 @@ export const vueApp = () => {
     appSetup.component('EventsGroup', EventsGroup);
     appSetup.component('Filters', Filters);
     appSetup.component('FiltersMobile', FiltersMobile);
+    appSetup.component('FrenchButton', FrenchButton);
     appSetup.component('FullImage', FullImage);
     appSetup.component('ParagraphText', ParagraphText);
+    appSetup.component('Published', Published);
+    appSetup.component('ReturnButton', ReturnButton);
     appSetup.component('Searchbar', Searchbar);
     appSetup.component('Sidebar', Sidebar);
     appSetup.component('SidebarAdd', SidebarAdd);
     appSetup.component('SidebarDashboard', SidebarDashboard);
     appSetup.component('SidebarEdit', SidebarEdit);
     appSetup.component('SidebarLogo', SidebarLogo);
+    appSetup.component('SaveChangesButton', SaveChangesButton);
+    appSetup.component('SaveNewEventButton', SaveNewEventButton);
     appSetup.component('Sort', Sort);
     appSetup.component('Tag', Tag);
     appSetup.component('ThreeImageCombo', ThreeImageCombo);
     appSetup.component('Video', Video);
+    appSetup.component('ViewEventButton', ViewEventButton);
 
     appSetup.mount('#app');
 }
