@@ -23,7 +23,7 @@
 
             <Divider class="border border-dsj-grey1" />
 
-            <div class="event-date-time flex gap-x-2 items-center">
+            <div class="event-date-time flex gap-x-4 items-center">
                 <i class="pi pi-calendar text-dsj-yellow"></i>
                 <div class="flex flex-col">
                     <template v-if="event.dates.length === 1">
@@ -41,7 +41,7 @@
 
             <Divider class="border border-dsj-grey1" />
 
-            <div class="event-location flex gap-x-2 items-center">
+            <div class="event-location flex gap-x-4 items-center">
                 <i class="pi pi-map-marker text-dsj-yellow"></i>
                 <p class="text-dsj-grey4 text-sm">{{ event.location.address }} - {{ event.location.type }}</p>
             </div>

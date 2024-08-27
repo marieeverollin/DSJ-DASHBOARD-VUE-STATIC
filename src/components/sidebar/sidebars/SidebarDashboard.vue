@@ -21,8 +21,7 @@
 
     <div class="top-links md:hidden flex flex-col gap-5 p-4 relative bg-white rounded-t-xl">
         <SidebarLogo />
-        <FiltersMobile :filters="filters" :selectedFilter="selectedFilter" @update:filter="selectFilter"
-            @update:date="sendDateToDashboard" @sortOrder="sortEvents" />
+        <FiltersMobile :filters="filters" :selectedFilter="selectedFilter" @update:filter="selectFilter" @update:date="sendDateToDashboard" @sortOrder="sortEvents" />
     </div>
 </template>
 
