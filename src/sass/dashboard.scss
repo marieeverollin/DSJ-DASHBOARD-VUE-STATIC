@@ -3,6 +3,7 @@ $dsj-grey2: #E3E3E3;
 $dsj-grey3: #A0A0A0;
 $dsj-grey4: #545454;
 $dsj-yellow: #FEC100;
+$dsj-yellow-15: rgba(254, 193, 0, 0.15);
 $green: #16a34a;
 $white: #fff;
 $border-color: #E3E3E3;
@@ -155,9 +156,49 @@ $input-background: transparent;
     }
 }
 
+.p-datepicker-calendar {
+    .p-datepicker-header {
+        .p-button {
+            color: $dsj-yellow;
+        }
+        .p-datepicker-title {
+            color: $dsj-grey4;
+        }
+    }
+        .p-datepicker-weekday-cell {
+        .p-datepicker-weekday {
+            color: $dsj-grey4;
+        }
+    }
+    .p-datepicker-day-cell {
+        .p-datepicker-day {
+            color: $dsj-grey4;
+        }
+    }
+}
+
+.p-datepicker-time-picker {
+    span {
+        color: $dsj-grey4;
+    }
+
+    .p-button {
+        color: $dsj-yellow;
+    }
+}
+
+.p-select-label {
+    color: $dsj-grey4;
+}
+
+.p-select-option {
+    color: $dsj-grey4;
+    font-weight: 200;
+}
+
 .p-select-option-selected {
-    background-color: $dsj-yellow;
-    color: $white;
+    background-color: $dsj-yellow-15;
+    color: $dsj-grey4;
 }
 
 .p-drawer-title {
@@ -171,6 +212,22 @@ $input-background: transparent;
     flex-direction: column;
     row-gap: 20px;
 }
+
+.p-multiselect {
+    .p-multiselect-label {
+        color: $dsj-grey4;
+    }
+}
+
+.p-multiselect-option {
+    font-weight: 200;    
+    color: $dsj-grey4;
+}
+
+.p-multiselect-option.p-focus {
+    background-color: $dsj-yellow-15;
+}
+
 
 /* ----------------------------------------- */
 
