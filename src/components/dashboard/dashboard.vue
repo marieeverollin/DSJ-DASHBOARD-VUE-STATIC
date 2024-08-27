@@ -10,7 +10,7 @@
                 <h2 class="filterSelected text-xl uppercase w-max text-dsj-yellow font-normal">{{ selectedFilter }}</h2>
                 <Filters @sortOrder="sortEvents" @update:date="filterByDate" />
             </div>
-            <EventsGroup :events="filteredAndSortedEvents" :selectedFilter="selectedFilter" />
+            <EventsGroup :events="filteredAndSortedEvents" :selectedFilter="selectedFilter" @delete-event="deleteEvent" />
         </div>
     </div>
 </template>
@@ -177,6 +177,9 @@ export default {
         filterByDate(date) {
             this.filterDate = date;
         },
+        deleteEvent(eventId) {
+            this.events = this.events.filter(event => event.id !== eventId);
+        }
     }
 };
 </script>

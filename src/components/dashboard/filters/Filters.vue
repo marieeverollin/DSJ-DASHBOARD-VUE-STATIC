@@ -31,17 +31,18 @@ export default {
         selectFilter(filter) {
             this.$emit('update:filter', filter);
         },
-        updateFilterText(value) {
-            this.$emit('update:filterText', value);
-        },
-        updateIconDisplay(value) {
-            this.$emit('update:iconDisplay', value);
-        },
-        sortEvents(order) {
-            this.$emit('sortOrder', order);
-        },
+        // updateFilterText(value) {
+        //     this.$emit('update:filterText', value);
+        // },
+        // updateIconDisplay(value) {
+        //     this.$emit('update:iconDisplay', value);
+        // },
         handleSortOrder(order) {
             this.$emit('sortOrder', order);
+        },
+        deleteEvent(eventId) {
+            this.events = this.events.filter(event => event.id !== eventId);
+            this.filterByDate(this.filterDate);
         }
     }
 };

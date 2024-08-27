@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col lg:flex-row lg:flex-wrap gap-6">
-        <EventSingle v-for="(event, index) in paginatedEvents" :key="event.id" :event="event" :index="index + first" @delete-event="removeEvent(event.id)" />
+        <EventSingle v-for="(event, index) in paginatedEvents" :key="event.id" :event="event" :index="index + first" @delete-event="$emit('delete-event', $event)" />
     </div>
 
     <Paginator v-model:first="first" :rows="rowsPerPage" :totalRecords="totalRecords" template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink" currentPageReportTemplate="{currentPage}" class="text-xs" />
@@ -46,14 +46,11 @@ export default {
         },
     },
     methods: {
+        removeEvent(id) {
+            this.$emit('delete-event', id);
+        },
         generateId() {
             return Math.random().toString(36).substr(2, 9);
-        },
-        removeEvent(id) {
-            const index = this.events.findIndex(event => event.id === id);
-            if (index !== -1) {
-                this.events.splice(index, 1);
-            }
         }
     },
     created() {
@@ -65,5 +62,3 @@ export default {
     }
 };
 </script>
-
-<style scoped></style>

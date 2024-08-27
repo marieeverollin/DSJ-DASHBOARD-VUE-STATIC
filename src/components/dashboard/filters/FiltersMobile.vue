@@ -18,15 +18,19 @@ export default {
     },
     emits: ['sortOrder', 'update:filter'],
     methods: {
+        filterByDate(date) {
+            this.$emit('update:date', date);
+        },
         selectFilter(filter) {
             this.$emit('update:filter', filter);
         },
         handleSortOrder(order) {
             this.$emit('sortOrder', order);
         },
-        filterByDate(date) {
-            this.$emit('update:date', date);
-        },
+        deleteEvent(eventId) {
+            this.events = this.events.filter(event => event.id !== eventId);
+            this.filterByDate(this.filterDate);
+        }
     }
 };
 </script>
