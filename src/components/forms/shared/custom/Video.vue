@@ -5,8 +5,8 @@
             <h3 class="text-lg text-dsj-grey3">Video (YouTube URL)</h3>
             <div class="flex gap-x-3 items-center flex-row-reverse justify-between md:flex-row">
                 <div class="flex gap-x-1 md:gap-x-3 items-center">
-                    <ArrowUp />
-                    <ArrowDown />
+                    <ArrowUp v-if="index > 0" @click="moveUp" />
+                    <ArrowDown v-if="index < lastIndex" @click="moveDown" />
                 </div>
                 <DeleteButton :index="index" @deleteComponent="deleteComponent" />
             </div>
@@ -19,13 +19,28 @@
 
 <script>
 export default {
-    props: ['index'],
+    props: {
+        index: {
+            type: Number,
+            required: true
+        },
+        lastIndex: {
+            type: Number,
+            required: true
+        }
+    },
     data() {
         return {
             eventVideo: '',
         };
     },
     methods: {
+        moveUp() {
+            this.$emit('moveUp', this.index);
+        },
+        moveDown() {
+            this.$emit('moveDown', this.index);
+        },
         deleteComponent() {
             this.$emit('deleteComponent', this.index);
         },
