@@ -24,18 +24,20 @@ export default {
             events: [
                 {
                     id: 1,
-                    date: {
-                        day: '10th',
-                        month: 'September',
-                        year: 2024,
-                        fullDate: 'September 10 2024'
-                    },
-                    time: {
-                        from: '10:30:00 am',
-                        to: '12:00:00 pm'
-                    },
+                    dates: [
+                        {
+                            day: '10th',
+                            month: 'August',
+                            year: 2024,
+                            fullDate: 'August 10 2024',
+                            time: {
+                                from: '10:30:00 am',
+                                to: '12:00:00 pm'
+                            }
+                        }
+                    ],
                     status: 'upcoming',
-                    title: 'Learn to Longboard for Women+ with Sphere Adventure Programs',
+                    title: 'A Learn to Longboard for Women+ with Sphere Adventure Programs',
                     location: {
                         address: '682-702 Main St',
                         type: 'Station One Skate Park'
@@ -43,76 +45,133 @@ export default {
                 },
                 {
                     id: 2,
-                    date: {
-                        day: '5th',
-                        month: 'August',
-                        year: 2024,
-                        fullDate: 'August 5 2024'
-                    },
-                    time: {
-                        from: ' 2:00:00 pm',
-                        to: ' 5:00:00 pm'
-                    },
-                    status: 'in progress',
-                    title: 'Celebrate New Brunswick Day at the Fundy Trail Provincial Park',
-                    location: {
-                        address: '3 Fundy Trail Parkway',
-                        type: 'Long Beach'
-                    }
-                },
-                {
-                    id: 3,
-                    date: {
-                        day: '5th',
-                        month: 'August',
-                        year: 2024,
-                        fullDate: 'August 5 2024'
-                    },
-                    time: {
-                        from: ' 2:00:00 pm',
-                        to: ' 5:00:00 pm'
-                    },
-                    status: 'in progress',
-                    title: 'Celebrate New Brunswick Day at the Fundy Trail Provincial Park',
-                    location: {
-                        address: '3 Fundy Trail Parkway',
-                        type: 'Long Beach'
-                    }
-                },
-                {
-                    id: 4,
-                    date: {
-                        day: '25th',
-                        month: 'July',
-                        year: 2024,
-                        fullDate: 'July 25 2024'
-                    },
-                    time: {
-                        from: ' 2:00:00 pm',
-                        to: ' 5:00:00 pm'
-                    },
-                    status: 'past',
-                    title: 'Ryan Naismith LIVE at the Five & Dime',
+                    dates: [
+                        {
+                            day: '5th',
+                            month: 'October',
+                            year: 2024,
+                            fullDate: 'October 5 2024',
+                            time: {
+                                from: '2:00:00 pm',
+                                to: '5:00:00 pm'
+                            }
+                        },
+                        {
+                            day: '5th',
+                            month: 'November',
+                            year: 2024,
+                            fullDate: 'November 5 2024',
+                            time: {
+                                from: '2:00:00 pm',
+                                to: '5:00:00 pm'
+                            }
+                        }
+                    ],
+                    status: 'upcoming',
+                    title: 'B Twice! Ryan Naismith LIVE at the Five & Dime',
                     location: {
                         address: '40 Grannan Street',
                         type: 'Five & Dime'
                     }
                 },
-
+                {
+                    id: 3,
+                    dates: [
+                        {
+                            day: '26th',
+                            month: 'August',
+                            year: 2024,
+                            fullDate: 'August 26 2024',
+                            time: {
+                                from: '2:00:00 pm',
+                                to: '5:00:00 pm'
+                            }
+                        },
+                        {
+                            day: '28th',
+                            month: 'August',
+                            year: 2024,
+                            fullDate: 'August 28 2024',
+                            time: {
+                                from: '2:00:00 pm',
+                                to: '5:00:00 pm'
+                            }
+                        },
+                        {
+                            day: '29th',
+                            month: 'August',
+                            year: 2024,
+                            fullDate: 'August 29 2024',
+                            time: {
+                                from: '2:00:00 pm',
+                                to: '5:00:00 pm'
+                            }
+                        }
+                    ],
+                    status: 'upcoming',
+                    title: 'C Ryan Naismith LIVE at the Five & Dime',
+                    location: {
+                        address: '40 Grannan Street',
+                        type: 'Five & Dime'
+                    }
+                },
+                {
+                    id: 4,
+                    dates: [
+                        {
+                            day: '26th',
+                            month: 'July',
+                            year: 2024,
+                            fullDate: 'July 26 2024',
+                            time: {
+                                from: '2:00:00 pm',
+                                to: '5:00:00 pm'
+                            }
+                        },
+                        {
+                            day: '26th',
+                            month: 'August',
+                            year: 2024,
+                            fullDate: 'August 26 2024',
+                            time: {
+                                from: '2:00:00 pm',
+                                to: '5:00:00 pm'
+                            }
+                        },
+                        {
+                            day: '26th',
+                            month: 'September',
+                            year: 2024,
+                            fullDate: 'September 26 2024',
+                            time: {
+                                from: '2:00:00 pm',
+                                to: '5:00:00 pm'
+                            }
+                        }
+                    ],
+                    status: 'upcoming',
+                    title: 'D Ryan Naismith LIVE at the Five & Dime',
+                    location: {
+                        address: '40 Grannan Street',
+                        type: 'Five & Dime'
+                    }
+                },
                 {
                     id: 5,
-                    date: {
-                        day: '5th',
-                        month: 'July',
-                        year: 2024,
-                        fullDate: 'July 5 2024'
-                    },
-                    time: {
-                        from: ' 2:00:00 pm',
-                        to: ' 5:00:00 pm'
-                    },
-                    status: 'past',
-                    title: 'Ryan Naismith LIVE at the Five & Dime',
+                    dates: [
+                        {
+                            day: '26th',
+                            month: 'July',
+                            year: 2024,
+                            fullDate: 'July 26 2024',
+                            time: {
+                                from: '2:00:00 pm',
+                                to: '5:00:00 pm'
+                            }
+                        },
+                    ],
+                    status: 'upcoming',
+                    title: 'E Ryan Naismith LIVE at the Five & Dime',
                     location: {
                         address: '40 Grannan Street',
                         type: 'Five & Dime'
@@ -120,21 +179,23 @@ export default {
                 },
                 {
                     id: 6,
-                    date: {
-                        day: '5th',
-                        month: 'October',
-                        year: 2024,
-                        fullDate: 'October 5 2024'
-                    },
-                    time: {
-                        from: ' 2:00:00 pm',
-                        to: ' 5:00:00 pm'
-                    },
+                    dates: [
+                        {
+                            day: '10th',
+                            month: 'October',
+                            year: 2024,
+                            fullDate: 'October 10 2024',
+                            time: {
+                                from: '10:30:00 am',
+                                to: '12:00:00 pm'
+                            }
+                        }
+                    ],
                     status: 'upcoming',
-                    title: 'Twice! Ryan Naismith LIVE at the Five & Dime',
+                    title: 'F Learn to Longboard for Women+ with Sphere Adventure Programs',
                     location: {
-                        address: '40 Grannan Street',
-                        type: 'Five & Dime'
+                        address: '682-702 Main St',
+                        type: 'Station One Skate Park'
                     }
                 },
             ],
@@ -145,23 +206,24 @@ export default {
     computed: {
         filteredAndSortedEvents() {
             let filteredEvents = this.events;
-
             if (this.filterDate) {
                 filteredEvents = filteredEvents.filter(event => {
-                    const eventDate = new Date(event.date.fullDate);
-                    return eventDate.toDateString() === new Date(this.filterDate).toDateString();
+                    return event.dates.some(date => {
+                        const eventDate = new Date(date.fullDate);
+                        return eventDate.toDateString() === new Date(this.filterDate).toDateString();
+                    });
                 });
             }
-
             return filteredEvents.sort((a, b) => {
+                const getFirstDate = event => new Date(event.dates[0].fullDate);
                 if (this.sortOrder === 'ascTitle') {
                     return a.title.localeCompare(b.title);
                 } else if (this.sortOrder === 'descTitle') {
                     return b.title.localeCompare(a.title);
                 } else if (this.sortOrder === 'recentToOldest') {
-                    return new Date(b.date.fullDate) - new Date(a.date.fullDate);
+                    return getFirstDate(b) - getFirstDate(a);
                 } else if (this.sortOrder === 'oldestToRecent') {
-                    return new Date(a.date.fullDate) - new Date(b.date.fullDate);
+                    return getFirstDate(a) - getFirstDate(b);
                 }
                 return 0;
             });
@@ -179,7 +241,25 @@ export default {
         },
         deleteEvent(eventId) {
             this.events = this.events.filter(event => event.id !== eventId);
-        }
+        },
+        updateEventStatuses() {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            this.events.forEach(event => {
+                const firstDate = new Date(event.dates[0].fullDate);
+                const lastDate = new Date(event.dates[event.dates.length - 1].fullDate);
+                if (today > lastDate) {
+                    event.status = 'past';
+                } else if (today >= firstDate && today <= lastDate) {
+                    event.status = 'in progress';
+                } else {
+                    event.status = 'upcoming';
+                }
+            });
+        },
+    },
+    mounted() {
+        this.updateEventStatuses();
     }
 };
 </script>

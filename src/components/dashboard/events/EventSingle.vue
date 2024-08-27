@@ -6,9 +6,15 @@
             <div class="flex flex-col gap-y-4">
                 <div class="flex flex-row w-full justify-between">
                     <div class="event-date text-dsj-yellow">
-                        <p class="uppercase text-sm">{{ event.date.month }}</p>
-                        <p class="lowercase font-bold text-2xl">{{ event.date.day }}</p>
-                        <p class="text-sm">{{ event.date.year }}</p>
+                        <template v-if="event.dates.length === 1">
+                            <p class="uppercase text-sm">{{ event.dates[0].month }}</p>
+                            <p class="lowercase font-bold text-2xl">{{ event.dates[0].day }}</p>
+                            <p class="text-sm">{{ event.dates[0].year }}</p>
+                        </template>
+                        <template v-else>
+                            <p class="lowercase font-bold text-2xl">{{ event.dates.length }}</p>
+                            <p class="uppercase text-sm">Dates</p>
+                        </template>
                     </div>
                     <EventTag :status="event.status" />
                 </div>
@@ -20,10 +26,18 @@
             <div class="event-date-time flex gap-x-2 items-center">
                 <i class="pi pi-calendar text-dsj-yellow"></i>
                 <div class="flex flex-col">
-                    <p class="text-dsj-grey4 text-sm">{{ event.date.fullDate }}</p>
-                    <p class="text-dsj-grey4 text-sm">from {{ event.time.from }} to {{ event.time.to }}</p>
+                    <template v-if="event.dates.length === 1">
+                        <p class="text-dsj-grey4 text-sm">{{ event.dates[0].fullDate }}</p>
+                        <p class="text-dsj-grey4 text-sm">from {{ event.dates[0].time.from }} to {{
+                            event.dates[0].time.to }}</p>
+                    </template>
+                    <template v-else>
+                        <p class="text-dsj-grey4 text-sm">Starting {{ event.dates[0].fullDate }} <br> until {{
+                            event.dates[event.dates.length - 1].fullDate }}</p>
+                    </template>
                 </div>
             </div>
+
 
             <Divider class="border border-dsj-grey1" />
 
