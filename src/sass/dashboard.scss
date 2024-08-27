@@ -219,6 +219,10 @@ $input-background: transparent;
     }
 }
 
+.p-multiselect-header {
+    padding: 1rem 0.75rem;
+}
+
 .p-multiselect-option {
     font-weight: 200;    
     color: $dsj-grey4;
@@ -349,16 +353,12 @@ $input-background: transparent;
 /* Responsive */
 @media screen and (max-width: 1366px) {
     .single-event {
-        max-width: 31.2%;
+        max-width: 50%;
+        flex: 1 0 48%;
     }
 }
 
 @media screen and (max-width: 1280px) {
-    .single-event {
-        max-width: 50%;
-        flex: 1 0 48%;
-    }
-
     .p-fileupload span:not(.p-button span) {
         font-size: 10px;
     }
@@ -366,7 +366,7 @@ $input-background: transparent;
 
 @media screen and (max-width: 1120px) {
     .single-event {
-        max-width: 47%;
+        max-width: 47.5%;
     }
 }
 

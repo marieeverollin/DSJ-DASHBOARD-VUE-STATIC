@@ -8,7 +8,6 @@
             <div class="flex flex-1 w-full xl:w-6/12 flex-col gap-y-5 p-5 xl:pr-0">
                 <div class="input-group flex items-center gap-x-5">
                     <label for="address" class="text-dsj-grey4 w-4/12"> Address </label>
-
                     <!-- <vue-google-autocomplete ref="address" id="map" classname="form-control" placeholder="Search Places"
                         v-on:placechanged="getAddressData" country="ca" class="rounded-md gap-x-2 text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-8/12">
                     </vue-google-autocomplete> -->
