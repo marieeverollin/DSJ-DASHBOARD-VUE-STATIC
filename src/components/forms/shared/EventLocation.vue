@@ -52,7 +52,6 @@
 export default {
     data() {
         return {
-            // name: 'MyMapComponent',
             address: "",
             locationName: "",
             city: "",
@@ -73,7 +72,6 @@ export default {
                 { name: 'Saskatchewan', value: 'sk' },
                 { name: 'Yukon', value: 'yt' },
             ],
-        // center: { lat: 40.689247, lng: -74.044502 },
         };
     },
 };

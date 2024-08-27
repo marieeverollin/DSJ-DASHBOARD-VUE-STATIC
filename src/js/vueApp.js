@@ -4,7 +4,8 @@ import PrimeVue from 'primevue/config';
 import router from './router';
 import Aura from '@primevue/themes/aura';
 import 'primeicons/primeicons.css';
-// import { GoogleMap, Marker } from 'vue3-google-map';
+import { GoogleMap, Marker } from 'vue3-google-map';
+import VueGoogleAutocomplete from "vue-google-autocomplete";
 
 /* PrimeVue */
 import Button from 'primevue/button';
@@ -89,13 +90,15 @@ export const vueApp = () => {
     appSetup.use(router);
 
     /* GOOGLE */
-    /*appSetup.use(GoogleMap, {
+    appSetup.use(GoogleMap, {
         load: {
             key: 'AIzaSyBfTsENPvt4dnfgQSxh-76CMzU3zf-BATw',
+            libraries: 'places'
         },
     });
     appSetup.component('GoogleMap', GoogleMap.GoogleMap);
-    appSetup.component('GoogleMapMarker', GoogleMap.Marker); */
+    appSetup.component('GoogleMapMarker', GoogleMap.Marker);
+    appSetup.component('VueGoogleAutocomplete', VueGoogleAutocomplete);
 
     /* PrimeVue Components */
     appSetup.component('Button', Button);
@@ -153,7 +156,7 @@ export const vueApp = () => {
     appSetup.component('ThreeImageCombo', ThreeImageCombo);
     appSetup.component('Video', Video);
     appSetup.component('ViewEventButton', ViewEventButton);
-
+    
     appSetup.mount('#app');
 }
 
