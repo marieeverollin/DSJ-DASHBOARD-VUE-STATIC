@@ -14,7 +14,7 @@
 
         <div class="flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full p-2.5 md:p-5">
             <FileUpload ref="customSectImage" mode="basic" name="featured[]" url="/api/upload" accept="image/*" :maxFileSize="1000000" @upload="onUpload" @select="onFileSelect" class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm"></FileUpload>
-            <Button v-if="fileSelected" label="Delete" icon="pi pi-times" @click="removeImage" class="delete-date items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5 rounded-md text-xs uppercase h-fit w-fit" />
+            <Button v-if="fileSelected" label="Delete" icon="pi pi-times" @click="removeImage" class="delete-date items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5  md:p-2 rounded-md text-xs uppercase h-fit w-fit" />
         </div>
     </div>
 </template>

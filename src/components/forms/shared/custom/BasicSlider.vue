@@ -14,7 +14,7 @@
         <div class="flex flex-col gap-y-5 p-2.5 md:p-5">
             <div v-for="(upload, index) in uploads" :key="upload.id" class="flex gap-x-5 items-center justify-between">
                 <FileUpload :ref="`customSectSlider_${upload.id}`" mode="basic" :name="`featured[]_${index}`" url="/api/upload" accept="image/*" :maxFileSize="1000000" @upload="onUpload" @select="() => onFileSelect(index)" class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm"></FileUpload>
-                <Button v-if="upload.fileSelected" label="Delete" icon="pi pi-times" @click="removeImage(index)" class="delete-date items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5 rounded-md text-xs uppercase h-fit" />
+                <Button v-if="upload.fileSelected" label="Delete" icon="pi pi-times" @click="removeImage(index)" class="delete-date items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5 md:p-2 rounded-md text-xs uppercase h-fit" />
             </div>
         </div>
     </div>
