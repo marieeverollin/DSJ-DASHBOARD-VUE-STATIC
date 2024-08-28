@@ -14,8 +14,6 @@ const router = createRouter({
     history: createWebHistory(),
     routes,
     scrollBehavior(to, from, savedPosition) {
-        console.log('Saved position:', savedPosition);
-        console.log('To.hash:', to.hash);
         if (savedPosition) {
             return savedPosition;
         }
@@ -23,7 +21,6 @@ const router = createRouter({
             return new Promise((resolve) => {
                 setTimeout(() => {
                     const element = document.querySelector(to.hash);
-                    console.log('Element found:', element);
                     if (element) {
                         element.scrollIntoView({ behavior: 'smooth' });
                         setTimeout(() => {

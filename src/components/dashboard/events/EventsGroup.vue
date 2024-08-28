@@ -45,6 +45,7 @@ export default {
             return this.filteredEvents.slice(start, end);
         },
     },
+    emits: ['delete-event'],
     methods: {
         removeEvent(id) {
             this.$emit('delete-event', id);

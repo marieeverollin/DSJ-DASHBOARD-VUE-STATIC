@@ -37,6 +37,7 @@ export default {
             required: true
         }
     },
+    emits: ['sortOrder', 'update:filter', 'update:date'],
     methods: {
         selectFilter(filter) {
             this.$emit('update:filter', filter);
