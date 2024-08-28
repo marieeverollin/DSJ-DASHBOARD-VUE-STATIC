@@ -6,7 +6,7 @@
 
         <!-- Main Content -->
         <div class="main-content flex flex-col md:w-full gap-y-5 p-4 lg:p-12">
-            <div class="filter-row flex md:flex-col lg:flex-row w-full items-center justify-between gap-4">
+            <div class="filter-row flex flex-col xl:flex-row w-full items-center justify-between gap-4">
                 <h2 class="filterSelected text-xl uppercase w-max text-dsj-yellow font-normal">{{ selectedFilter }}</h2>
                 <Filters @sortOrder="sortEvents" @update:date="filterByDate" />
             </div>
