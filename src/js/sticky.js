@@ -10,7 +10,7 @@ export const initSticky = () => {
         const stickyPoint = sidebarContainer.offset().top;
         const windowWidth = $(window).width();
 
-        if (windowWidth > 768) {
+        if (windowWidth >= 768) {
             if (scrollPosition > stickyPoint) {
                 sidebar.addClass('sticky-active');
                 sidebar.css({
@@ -40,7 +40,7 @@ export const initSticky = () => {
         }
 
         const topLinks = $('.top-links');
-        if (windowWidth <= 768) {
+        if (windowWidth <= 767) {
             if (scrollPosition > 20) {
                 topLinks.addClass('fixed').removeClass('relative');
             } else {
