@@ -18,7 +18,7 @@ export default {
     data() {
         return {
             first: 0,
-            rowsPerPage: 12,
+            rowsPerPage: 6,
         };
     },
     computed: {
