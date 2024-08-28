@@ -31,7 +31,7 @@ export default {
     data() {
         return {
             visibleRightSort: false,
-            selectedSortOrder: '',
+            selectedSortOrder: 'recentToOldest',
         };
     },
     methods: {
