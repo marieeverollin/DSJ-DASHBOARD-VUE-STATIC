@@ -144,6 +144,10 @@ $input-background: transparent;
     &-day-selected {
         background-color: $dsj-yellow;
     }
+
+    .p-datepicker-input-icon {
+        color: $dsj-yellow;
+    }
 }
 
 .date-picker {
@@ -188,8 +192,13 @@ $input-background: transparent;
     }
 }
 
-.p-select-label {
-    color: $dsj-grey4;
+.p-select {
+    .p-select-label {
+        color: $dsj-grey4;
+    }
+    .p-select-dropdown-icon {
+        color: $dsj-yellow;
+    }
 }
 
 .p-select-option {
@@ -218,10 +227,16 @@ $input-background: transparent;
     .p-multiselect-label {
         color: $dsj-grey4;
     }
+    .p-multiselect-dropdown-icon {
+        color: $dsj-yellow;
+    }
 }
 
 .p-multiselect-header {
     padding: 0.75rem;
+    .p-inputicon {
+        color: $dsj-yellow;
+    }
 }
 
 .p-multiselect-option {
@@ -410,7 +425,7 @@ $input-background: transparent;
             .p-datepicker {
                 width: 100%;
             }
-                    .p-select {
+            .p-select {
             width: 100%;
         }
         }

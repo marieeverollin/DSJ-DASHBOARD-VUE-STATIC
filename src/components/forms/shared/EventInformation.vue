@@ -35,8 +35,7 @@
             </div>
 
             <div class="input-group flex flex-col lg:flex-row lg:items-center gap-x-5">
-                <label for="event-header-img" class="text-dsj-grey4 w-full lg:w-3/12"> Short Description <br>(Home Page)
-                </label>
+                <label for="event-header-img" class="text-dsj-grey4 w-full lg:w-3/12"> Short Description <br>(Home Page) </label>
                 <Textarea v-model="eventDescription" rows="5" cols="30" class="rounded-md text-dsj-grey3 border border-dsj-grey2 p-2 shadow-none w-full lg:w-9/12" />
             </div>
         </div>
