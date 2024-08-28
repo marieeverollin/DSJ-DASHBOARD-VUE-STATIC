@@ -12,18 +12,18 @@
             </div>
         </div>
 
-        <div class="flex flex-col gap-5 p-2.5 md:p-5">
+        <div class="input-upload flex flex-col gap-5 p-2.5 md:p-5">
             <div class="flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full">
                 <FileUpload ref="customSectCombo1" mode="basic" name="comboImage1[]" url="/api/upload" accept="image/*" :maxFileSize="1000000" @upload="onUpload" @select="onFileSelect(1)" class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm"></FileUpload>
                 <Button v-if="fileSelected1" label="Delete" icon="pi pi-times" @click="removeImage(1)" class="delete-date w-fit items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5  md:p-2 rounded-md text-xs uppercase h-fit" />
             </div>
 
-            <div class="flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full">
+            <div class="input-upload flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full">
                 <FileUpload ref="customSectCombo2" mode="basic" name="comboImage2[]" url="/api/upload" accept="image/*" :maxFileSize="1000000" @upload="onUpload" @select="onFileSelect(2)" class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm"></FileUpload>
                 <Button v-if="fileSelected2" label="Delete" icon="pi pi-times" @click="removeImage(2)" class="delete-date w-fit items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5  md:p-2 rounded-md text-xs uppercase h-fit" />
             </div>
 
-            <div class="flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full">
+            <div class="input-upload flex flex-col gap-2 lg:flex-row lg:items-center justify-between w-full">
                 <FileUpload ref="customSectCombo3" mode="basic" name="comboImage3[]" url="/api/upload" accept="image/*" :maxFileSize="1000000" @upload="onUpload" @select="onFileSelect(3)" class="bg-dsj-yellow text-white py-2.5 px-3 rounded-xl text-sm"></FileUpload>
                 <Button v-if="fileSelected3" label="Delete" icon="pi pi-times" @click="removeImage(3)" class="delete-date w-fit items-center justify-center gap-x-2 bg-dsj-light-red text-white px-2.5 py-1.5  md:p-2 rounded-md text-xs uppercase h-fit" />
             </div>
