@@ -1,4 +1,5 @@
 /* Variables */
+$dsj-grey1: #F1F3F6;
 $dsj-grey2: #E3E3E3;
 $dsj-grey3: #A0A0A0;
 $dsj-grey4: #545454;
@@ -220,7 +221,7 @@ $input-background: transparent;
 }
 
 .p-multiselect-header {
-    padding: 1rem 0.75rem;
+    padding: 0.75rem;
 }
 
 .p-multiselect-option {
@@ -345,6 +346,12 @@ $input-background: transparent;
     }
 }
 
+/* Event Dates */
+.event-date-list .event-date-item:not(:first-of-type) {
+    border-top: 0.125rem solid $dsj-grey1;
+    padding-top: 1.25rem;
+}
+
 /* Custom Content */
 .custom-section>div:last-of-type {
     margin-bottom: 20px;
@@ -366,7 +373,7 @@ $input-background: transparent;
 
 @media screen and (max-width: 1120px) {
     .single-event {
-        max-width: 47.5%;
+        flex: 1 0 47.5%;
     }
 }
 
@@ -448,8 +455,8 @@ $input-background: transparent;
             width: 100%;
         }
 
-                .p-multiselect {
-            width: 100%;
+        .p-multiselect {
+        width: 100%;
         }
     }
 
