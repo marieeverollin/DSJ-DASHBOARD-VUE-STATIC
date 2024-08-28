@@ -7,6 +7,9 @@ import 'primeicons/primeicons.css';
 // import { GoogleMap, Marker } from 'vue3-google-map';
 // import VueGoogleAutocomplete from "vue-google-autocomplete";
 
+/* Events Data (json file) */
+import eventsData from '../eventsData.json';
+
 /* PrimeVue */
 import Button from 'primevue/button';
 import Checkbox from 'primevue/checkbox';
