@@ -14,6 +14,7 @@ import DatePicker from 'primevue/datepicker';
 import Dialog from 'primevue/dialog';
 import Divider from 'primevue/divider';
 import Drawer from 'primevue/drawer';
+import Editor from 'primevue/editor';
 import FileUpload from 'primevue/fileupload';
 import FloatLabel from 'primevue/floatlabel';
 import IconField from 'primevue/iconfield';
@@ -107,6 +108,7 @@ export const vueApp = () => {
     appSetup.component('Dialog', Dialog);
     appSetup.component('Divider', Divider);
     appSetup.component('Drawer', Drawer);
+    appSetup.component('Editor', Editor);
     appSetup.component('FileUpload', FileUpload);
     appSetup.component('FloatLabel', FloatLabel);
     appSetup.component('IconField', IconField);
