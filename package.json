@@ -1,5 +1,5 @@
 {
-  "name": "valley-fresh-static",
+  "name": "dsj-event-system",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -19,12 +19,8 @@
   },
   "dependencies": {
     "@primevue/themes": "^4.0.4",
-    "aos": "^2.3.4",
-    "jquery": "^3.7.1",
     "primeicons": "^7.0.0",
     "primevue": "^4.0.4",
-    "quill": "^2.0.2",
-    "slick-carousel": "^1.8.1",
     "vite-plugin-restart": "^0.4.1",
     "vue": "^3.4.37",
     "vue-google-autocomplete": "^1.1.4",

@@ -13,6 +13,8 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
+
+    // Serve for the +Date button on dashboard, to go to block Dates directly
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
             return savedPosition;
