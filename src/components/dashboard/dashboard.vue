@@ -1,16 +1,18 @@
 <template>
-    <div class="dashboard-container w-full relative flex flex-col md:flex-row bg-white rounded-2xl shadow-sm">
-       
+    <div class="dashboard-container w-full flex flex-col md:flex-row bg-white rounded-2xl shadow-sm relative">
+
         <!-- Sidebar -->
-        <SidebarDashboard :filters="eventFilters" :selectedFilter="selectedFilter" @update:filter="selectFilter" @sortOrder="sortEvents" @update:date="filterByDate" />
+        <SidebarDashboard :filters="eventFilters" :selectedFilter="selectedFilter" @update:filter="selectFilter"
+            @sortOrder="sortEvents" @update:date="filterByDate" />
 
         <!-- Main Content -->
-        <div class="main-content flex flex-col md:w-full gap-y-5 p-4 lg:p-12">
+        <div class="main-content flex flex-col md:w-full gap-y-5 p-4 lg:p-12 relative">
             <div class="filter-row flex flex-col xl:flex-row w-full items-center justify-between gap-4">
                 <h2 class="filterSelected text-xl uppercase w-max text-dsj-yellow font-normal">{{ selectedFilter }}</h2>
                 <Filters @sortOrder="sortEvents" @update:date="filterByDate" />
             </div>
-            <EventsGroup :events="filteredAndSortedEvents" :selectedFilter="selectedFilter" @delete-event="deleteEvent" />
+            <EventsGroup :events="filteredAndSortedEvents" :selectedFilter="selectedFilter"
+                @delete-event="deleteEvent" />
         </div>
     </div>
 </template>
