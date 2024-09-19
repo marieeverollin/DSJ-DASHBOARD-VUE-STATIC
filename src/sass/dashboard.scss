@@ -12,54 +12,6 @@ $small-font-size: 10px;
 $placeholder-color: $dsj-yellow;
 $input-background: transparent;
 
-/* ----------------------------------------- */
-
-/* Sticky Effect */
-.sidebar {
-    .sidebar-content {
-        transition: all 0.5s ease-in-out;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .sticky-active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.bottom-links {
-    width: 91.666667%;
-    border-top: 1px solid $dsj-grey2;
-}
-
-.top-links {
-    z-index: 1000;
-    transition: border-bottom 0.5s ease-in-out;
-  &.relative {
-    position: relative;
-    padding-top: 0px;
-    border-bottom: 1px solid $white;
-  }
-  &.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 91.666667%;
-    padding-top: 20px;
-    height: 220px;
-    border-bottom: 1px solid $dsj-grey2;
-  }
-}
-
-.dashboard-container:has(.top-links.fixed) .main-content {
-    padding-top: 220px;
-}
-
-/* ----------------------------------------- */
-
 /* Components PrimeVue */
 .p-fileupload {
     display: flex;
@@ -502,6 +454,10 @@ $input-background: transparent;
 }
 
 @media screen and (max-width: 767px) {
+    .dashboard-container .sidebar {
+        display: none;
+    }
+
     .sidebar {
         border-right: 0px;
     }

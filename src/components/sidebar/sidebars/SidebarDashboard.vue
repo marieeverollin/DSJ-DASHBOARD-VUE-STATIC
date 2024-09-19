@@ -1,6 +1,6 @@
 <template>
     <aside class="sidebar w-full md:w-56 min-w-56 h-auto">
-        <div class="sidebar-content top-0 left-0 right-0">
+        <div class="sidebar-content top-0 left-0 right-0 sticky">
             <div class="flex flex-col gap-y-4 p-4 lg:px-5 lg:py-12 z-10">
                 <div class="hidden md:block">
                     <SidebarLogo />
@@ -19,9 +19,12 @@
         </div>
     </aside>
 
-    <div class="top-links md:hidden flex flex-col gap-5 p-4 relative bg-white rounded-t-xl">
-        <SidebarLogo />
-        <FiltersMobile :filters="filters" :selectedFilter="selectedFilter" @update:filter="selectFilter" @update:date="sendDateToDashboard" @sortOrder="sortEvents" />
+    <div class="top-links md:hidden p-4 bg-white rounded-t-xl sticky top-0 z-10">
+        <div class="flex flex-col gap-y-5">
+            <SidebarLogo />
+            <FiltersMobile :filters="filters" :selectedFilter="selectedFilter" @update:filter="selectFilter"
+                @update:date="sendDateToDashboard" @sortOrder="sortEvents" />
+        </div>
     </div>
 </template>
 
